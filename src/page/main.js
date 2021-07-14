@@ -20,6 +20,7 @@ class Main extends React.Component{
           >
             Learn React
           </a>
+          <Link to='/react-pages/todomatic'>/react-pages/todomaticへ</Link>
           <Link to='/react-pages/one'>/react-pages/oneへ</Link>
         </header>
       </div>
