@@ -10,7 +10,7 @@ class Main extends React.Component{
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Edit <code>src/page/main.js</code> and save to reload.
           </p>
           <a
             className="App-link"
@@ -20,8 +20,9 @@ class Main extends React.Component{
           >
             Learn React
           </a>
-          <Link to='/react-pages/todomatic'>/react-pages/todomaticへ</Link>
-          <Link to='/react-pages/one'>/react-pages/oneへ</Link>
+          <Link to='/react-pages/todomatic'>todomatic</Link>
+          <Link to='/react-pages/qiita'>qiita</Link>
+          <Link to='/react-pages/one'>one</Link>
         </header>
       </div>
     )
