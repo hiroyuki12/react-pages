@@ -22,6 +22,7 @@ class Main extends React.Component{
           </a>
           <Link to='/react-pages/todomatic'>todomatic</Link>
           <Link to='/react-pages/qiita'>qiita</Link>
+          <Link to='/react-pages/simpletodo'>simpletodo</Link>
           <Link to='/react-pages/one'>one</Link>
         </header>
       </div>
