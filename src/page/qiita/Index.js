@@ -18,13 +18,9 @@ class Qiita extends React.Component {
   handleClick(target) {
     const search = target;
     const limit = 20;
-    const url = `https://qiita.com/api/v2/items?page=1&per_page=${limit}&query=${search}`;
+    const url = `https://qiita.com/api/v2/tags/react/items?page=1&per_page=${limit}`;
     axios
-      .get(url, {
-        headers: {
-          Authorization: "Bearer 0a499cd45f8b05c01ec95e4b852f6e91d0dfff44"
-        }
-      })
+      .get(url)
       .then((res) => {
         this.setState({ postsList: res.data });
       })

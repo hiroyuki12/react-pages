@@ -9,13 +9,8 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <h2>Find Qiita</h2>
+        <h2>QiitaでReactタグありの記事を表示</h2>
         <form onSubmit={this.handleSubmit}>
-          <input
-            value={this.state.title}
-            type="text"
-            onChange={this.handleChange}
-          />
           <input type="submit" value="Search" />
         </form>
       </div>
