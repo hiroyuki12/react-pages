@@ -6,6 +6,7 @@ import Simpletodo from './page/simpletodo/App';
 import Todolist from './page/todolist/App';
 import Counter from './page/counter/counter';
 import Tweet from './page/tweet/App';
+import Clock from './page/clock/App';
 
 const routes = [
     { path: '/react-pages/', component: Main, exact : true},
@@ -17,6 +18,7 @@ const routes = [
     { path: '/react-pages/todolist', component: Todolist},
     { path: '/react-pages/counter', component: Counter},
     { path: '/react-pages/tweet', component: Tweet},
+    { path: '/react-pages/clock', component: Clock},
   ];
   
   export default routes;
