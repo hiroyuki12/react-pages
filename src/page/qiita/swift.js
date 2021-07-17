@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 import axios from "axios";
-import Search from "./Search";
+import SearchSwift from "./SearchSwift";
 import { Link } from 'react-router-dom';
 
-class Qiita extends React.Component {
+class QiitaSwift extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,7 @@ class Qiita extends React.Component {
   handleClick(target) {
     const search = target;
     const limit = 40;
-    const url = `https://qiita.com/api/v2/tags/react/items?page=1&per_page=${limit}`;
+    const url = `https://qiita.com/api/v2/tags/swift/items?page=1&per_page=${limit}`;
     axios
       .get(url)
       .then((res) => {
@@ -42,11 +42,11 @@ class Qiita extends React.Component {
   render() {
     return (
       <div>
-        <Search search={this.handleClick} />
+        <SearchSwift search={this.handleClick} />
         <ul>{this.renderImageList(this.state.postsList)}</ul>
       </div>
     );
   }
 }
 
-export default Qiita;
+export default QiitaSwift;

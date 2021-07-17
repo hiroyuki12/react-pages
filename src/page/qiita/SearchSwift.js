@@ -1,6 +1,6 @@
 import React from "react";
 
-class Search extends React.Component {
+class SearchSwift extends React.Component {
   constructor(props) {
     super(props);
     this.state = { title: "" };
@@ -9,8 +9,8 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <h2>QiitaでReactタグありの記事を表示</h2>
-        <a href="qiitaswift">Swift</a>
+        <h2>QiitaでSwiftタグありの記事を表示</h2>
+        <a href="qiita">React</a>
         <form onSubmit={this.handleSubmit}>
           <input className="siimple-btn siimple-btn--teal" type="submit" value="Search" />
         </form>
@@ -35,4 +35,4 @@ class Search extends React.Component {
   };
 }
 
-export default Search;
+export default SearchSwift;
