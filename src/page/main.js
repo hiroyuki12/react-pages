@@ -27,6 +27,7 @@ class Main extends React.Component{
           <Link to='/react-pages/todomatic'>todomatic</Link>
           <Link to='/react-pages/tweet'>tweet</Link>
           <Link to='/react-pages/clock'>clock</Link>
+          <Link to='/react-pages/test'>test</Link>
           <Link to='/react-pages/one'>one</Link>
         </header>
       </div>
