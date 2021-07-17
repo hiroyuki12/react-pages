@@ -11,7 +11,7 @@ class Search extends React.Component {
       <div>
         <h2>QiitaでReactタグありの記事を表示</h2>
         <form onSubmit={this.handleSubmit}>
-          <input type="submit" value="Search" />
+          <input className="siimple-btn siimple-btn--teal" type="submit" value="Search" />
         </form>
       </div>
     );

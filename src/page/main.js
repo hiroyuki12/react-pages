@@ -20,11 +20,12 @@ class Main extends React.Component{
           >
             Learn React
           </a>
-          <Link to='/react-pages/todomatic'>todomatic</Link>
           <Link to='/react-pages/qiita'>qiita</Link>
           <Link to='/react-pages/simpletodo'>simpletodo</Link>
           <Link to='/react-pages/todolist'>todolist</Link>
           <Link to='/react-pages/counter'>counter</Link>
+          <Link to='/react-pages/todomatic'>todomatic</Link>
+          <Link to='/react-pages/tweet'>tweet</Link>
           <Link to='/react-pages/one'>one</Link>
         </header>
       </div>
