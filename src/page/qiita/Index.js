@@ -32,7 +32,7 @@ class Qiita extends React.Component {
       return (
         <li className="item" key={index}>
           <span>{index}: </span>
-          <a href={item.url}>{item.title}</a> {item.created_at}
+          <a href={item.url} target="_blank">{item.title}</a> {item.created_at}
         </li>
       );
     });
