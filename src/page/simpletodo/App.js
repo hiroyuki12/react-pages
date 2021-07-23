@@ -34,6 +34,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="siimple-box siimple--bg-dark">
+        <a href="https://mbp.hatenablog.com/entry/2021/07/10/211218" target="_blank" rel="noreferrer">MacでReact</a><br />
+        <a href="https://qiita.com/sayama0402/items/6364cef848e2c2d1cf7d" target="_blank" rel="noreferrer">ReactでシンプルなTodoアプリケーションを作成する</a>
         <h1 className="siimple-box-title siimple--color-white">Simple Todo App</h1>
         <Form handleAdd={this.handleAdd}/>
         <div className="siimple-rule"></div>

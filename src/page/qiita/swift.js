@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 import axios from "axios";
 import SearchSwift from "./SearchSwift";
-import { Link } from 'react-router-dom';
 
 class QiitaSwift extends React.Component {
   constructor(props) {
@@ -16,7 +14,6 @@ class QiitaSwift extends React.Component {
   }
 
   handleClick(target) {
-    const search = target;
     const limit = 40;
     const url = `https://qiita.com/api/v2/tags/swift/items?page=1&per_page=${limit}`;
     axios

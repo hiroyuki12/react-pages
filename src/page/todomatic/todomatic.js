@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class Todomatic extends React.Component{
     render(){
         return (
  <div className="todoapp stack-large">
+        <a href="https://mbp.hatenablog.com/entry/2021/06/29/215302" target="_blank" rel="noreferrer">DockerコンテナでReact</a><br />
+        <a href="https://developer.mozilla.org/ja/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_todo_list_beginning" target="_blank" rel="noreferrer">React ToDoリストをはじめる</a>
       <h1>TodoMatic</h1>
       <form>
         <h2 className="label-wrapper">

@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 import axios from "axios";
 import Search from "./Search";
-import { Link } from 'react-router-dom';
 
 class Qiita extends React.Component {
   constructor(props) {
@@ -16,7 +14,6 @@ class Qiita extends React.Component {
   }
 
   handleClick(target) {
-    const search = target;
     const limit = 40;
     const url = `https://qiita.com/api/v2/tags/react/items?page=1&per_page=${limit}`;
     axios
@@ -32,7 +29,7 @@ class Qiita extends React.Component {
       return (
         <li className="item" key={index}>
           <span>{index}: </span>
-          <a href={item.url} target="_blank">{item.title}</a> {item.created_at}
+          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {item.created_at}
         </li>
       );
     });

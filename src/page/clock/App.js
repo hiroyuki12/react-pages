@@ -50,6 +50,9 @@ class App extends Component {
   render() {
     return (
       <>
+        <a href="https://mbp.hatenablog.com/entry/2021/07/17/220318" target="_blank" rel="noreferrer">Reactで世界時計</a><br />
+        <a href="https://qiita.com/westhouse_k/items/6ccc98c8f762c6d8f1dd" target="_blank" rel="noreferrer">【初学者向け】Reactで世界時計を作ってみた</a><br />
+
         <Selectbox doChange={this.doChange} />
         <Clock time={this.state.nowTime} />
       </>

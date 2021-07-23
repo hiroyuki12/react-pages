@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 
 const Form = (props) => (
   <form className="siimple-form" onSubmit={props.handleAdd}>

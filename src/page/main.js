@@ -20,6 +20,14 @@ class Main extends React.Component{
           >
             Learn React
           </a>
+          <a
+            className="App-link"
+            href="https://mbp.hatenablog.com/entry/2021/07/10/211218"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            環境構築
+          </a>
           <Link to='/react-pages/qiita'>qiita</Link>
           <Link to='/react-pages/simpletodo'>simpletodo</Link>
           <Link to='/react-pages/todolist'>todolist</Link>

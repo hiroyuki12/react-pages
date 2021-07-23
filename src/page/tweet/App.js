@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import './style.css';
-import Tweet 	  from "./components/Tweet";
 import Timeline   from "./components/Timeline";
 import TweetInput from "./components/TweetInput";
 
@@ -26,6 +25,8 @@ class App extends Component {
 
     return (
       <div>
+        <a href="https://mbp.hatenablog.com/entry/2021/06/29/215302" target="_blank" rel="noreferrer">DockerコンテナでReact</a><br />
+        <a href="https://sbfl.net/blog/2019/02/20/react-only-tutorial/" target="_blank" rel="noreferrer">正真正銘のReactだけの不純物なしでReact入門</a>
         <TweetInput />
         <Timeline tweets={tweets}/>
       </div>
