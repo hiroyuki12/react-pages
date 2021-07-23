@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from "axios";
 import Search from "./Search";
+import Button from 'react-bootstrap/Button';
+import { Navbar, Nav } from 'react-bootstrap';
 
 class Qiita extends React.Component {
   constructor(props) {
@@ -39,6 +41,13 @@ class Qiita extends React.Component {
   render() {
     return (
       <div>
+          <Navbar bg="dark" variant="dark">
+            <Nav className="mr-auto">
+              <Nav.Link href='/react-pages/'>Home</Nav.Link>
+              <Nav.Link href='/react-pages/qiita'>Qiita</Nav.Link>
+              <Nav.Link href='/react-pages/blog'>Blog</Nav.Link>
+            </Nav>
+          </Navbar >
         <Search search={this.handleClick} />
         <ul>{this.renderImageList(this.state.postsList)}</ul>
       </div>

@@ -1,4 +1,5 @@
 import Main from './page/main';
+import Blog from './page/blog/index';
 import One from './page/one';
 import Todomatic from './page/todomatic/todomatic';
 import Qiita from './page/qiita/index';
@@ -13,6 +14,7 @@ import Test from './page/auth/Test';
 const routes = [
     { path: '/react-pages/', component: Main, exact : true},
     { path: '/react-pages/main', component: Main},
+    { path: '/react-pages/blog', component: Blog},
     { path: '/react-pages/one', component: One},
     { path: '/react-pages/todomatic', component: Todomatic},
     { path: '/react-pages/qiita', component: Qiita},
