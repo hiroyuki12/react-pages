@@ -38,17 +38,11 @@ class Main extends React.Component{
             環境構築
           </a>
           <Link to='/react-pages/qiita'>qiita</Link>
-          <Link to='/react-pages/simpletodo'>simpletodo</Link>
-          <Link to='/react-pages/todolist'>todolist</Link>
-          <Link to='/react-pages/counter'>counter</Link>
-          <Link to='/react-pages/todomatic'>todomatic</Link>
-          <Link to='/react-pages/tweet'>tweet</Link>
-          <Link to='/react-pages/clock'>clock</Link>
-          <Link to='/react-pages/test'>test</Link>
-          <Link to='/react-pages/one'>one</Link>
           <Link to='/react-pages/login'>Firebase(login)</Link>
           <Link to='/react-pages/signup'>Firebase(signup)</Link>
           <Link to='/react-pages/home'>home(private)</Link>
+          <Link to='/react-pages/firestore'>FireStore</Link>
+          <Link to='/react-pages/sub'>sub -)</Link>
         </header>
       </div>
     )

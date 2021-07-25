@@ -1,4 +1,5 @@
 import Main from './page/main';
+import Sub from './page/sub';
 import Blog from './page/blog/index';
 import One from './page/one';
 import Todomatic from './page/todomatic/todomatic';
@@ -13,10 +14,12 @@ import Test from './page/auth/Test';
 import Home from './page/firebase/components/Home';
 import Login from './page/firebase/auth/Login';
 import SignUp from './page/firebase/auth/SignUp';
+import FireStore from './page/firestore/App';
 
 const routes = [
     { path: '/react-pages/', component: Main, exact : true},
     { path: '/react-pages/main', component: Main},
+    { path: '/react-pages/sub', component: Sub},
     { path: '/react-pages/blog', component: Blog},
     { path: '/react-pages/one', component: One},
     { path: '/react-pages/todomatic', component: Todomatic},
@@ -31,6 +34,7 @@ const routes = [
     { path: '/react-pages/home', component: Home},
     { path: '/react-pages/login', component: Login},
     { path: '/react-pages/signup', component: SignUp},
+    { path: '/react-pages/firestore', component: FireStore},
   ];
   
 export default routes;
