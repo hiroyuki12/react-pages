@@ -10,6 +10,9 @@ import Counter from './page/counter/counter';
 import Tweet from './page/tweet/App';
 import Clock from './page/clock/App';
 import Test from './page/auth/Test';
+import Home from './page/firebase/components/Home';
+import Login from './page/firebase/auth/Login';
+import SignUp from './page/firebase/auth/SignUp';
 
 const routes = [
     { path: '/react-pages/', component: Main, exact : true},
@@ -25,6 +28,9 @@ const routes = [
     { path: '/react-pages/tweet', component: Tweet},
     { path: '/react-pages/clock', component: Clock},
     { path: '/react-pages/test', component: Test},
+    { path: '/react-pages/home', component: Home},
+    { path: '/react-pages/login', component: Login},
+    { path: '/react-pages/signup', component: SignUp},
   ];
   
-  export default routes;
+export default routes;

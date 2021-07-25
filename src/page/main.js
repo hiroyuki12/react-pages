@@ -46,6 +46,8 @@ class Main extends React.Component{
           <Link to='/react-pages/clock'>clock</Link>
           <Link to='/react-pages/test'>test</Link>
           <Link to='/react-pages/one'>one</Link>
+          <Link to='/react-pages/login'>Firebase(login)</Link>
+          <Link to='/react-pages/signup'>Firebase(signup)</Link>
         </header>
       </div>
     )
