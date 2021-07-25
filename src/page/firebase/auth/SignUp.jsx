@@ -13,6 +13,8 @@ const SignUp = ({ history }) => {
 
   return (
     <div>
+      <a href="https://mbp.hatenablog.com/entry/2021/07/25/100719?_ga=2.52584168.1977567373.1627048716-1359487452.1627048716" target="_blank" rel="noreferrer">ReactでFirebaseを使用してEmail・パスワ>ードでの認証機能</a><br />
+      <a href="https://qiita.com/k-penguin-sato/items/6e892231922b360a8659" target="_blank" rel="noreferrer">【React】 Firebaseを使用してEmail・パスワードでの認証機能の実装 - Qiita</a>
       <h1>Sign up</h1>
       <form onSubmit={handleSubmit}>
         <label>
