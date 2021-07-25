@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import Login from "./auth/Login";
 import SignUp from "./auth/SignUp";
 
-const App = () => {
+const Appxxx = () => {
   return (
     <AuthProvider>
       <Router>
@@ -20,4 +20,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Appxxx;

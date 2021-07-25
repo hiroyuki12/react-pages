@@ -4,7 +4,7 @@ import app from "./base";
 function Home(props) {
   return (
     <div>
-      <h2>Home Page</h2>
+      <h2>Home Page(private)</h2>
       <button onClick={() => app.auth().signOut()}>Sign out</button>
     </div>
   );
