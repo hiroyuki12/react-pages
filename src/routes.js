@@ -15,6 +15,7 @@ import Home from './page/firebase/components/Home';
 import Login from './page/firebase/auth/Login';
 import SignUp from './page/firebase/auth/SignUp';
 import FireStore from './page/firestore/App';
+import Index from './page/firestore/index';
 
 const routes = [
     { path: '/react-pages/', component: Main, exact : true},
@@ -35,6 +36,7 @@ const routes = [
     { path: '/react-pages/login', component: Login},
     { path: '/react-pages/signup', component: SignUp},
     { path: '/react-pages/firestore', component: FireStore},
+    { path: '/react-pages/index', component: Index},
   ];
   
 export default routes;

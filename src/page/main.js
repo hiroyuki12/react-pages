@@ -42,6 +42,7 @@ class Main extends React.Component{
           <Link to='/react-pages/signup'>Firebase(signup)</Link>
           <Link to='/react-pages/home'>home(private)</Link>
           <Link to='/react-pages/firestore'>FireStore</Link>
+          <Link to='/react-pages/index'>Index</Link>
           <Link to='/react-pages/sub'>sub -)</Link>
         </header>
       </div>
