@@ -3,28 +3,82 @@ import app, { db } from '../firebase/components/base';
 import { Link } from 'react-router-dom';
 
 class App extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            amount: 0,
+            text: '',
+            uid: ''
+        };
+    }
 
-    //登録ボタンが押されたら
-    handleSubmit = (values) => {
-        const docId = db.collection("articles").doc().id;
-        db.collection("articles").doc(docId).set({
-            title: "aaaa",
-            subtitle: "bbbb",
-            text: "cccc",
+    //old 登録ボタンが押されたら
+    handleOnSubmit = (values) => {
+        const docId = db.collection("expenseItems").doc().id;
+        const date = app.firestore.Timestamp.now();
+        db.collection("expenseItems").doc(docId).set({
+            amount: 30000,
+            date: date,
+            text: "電気代",
+            uid: this.state.title,
         });
 
         //登録後、Topに移動
-        this.props.history.push("/react-pages/firestore/");
+        this.props.history.push("/react-pages/");
+    }
+
+    // sendボタンが押されたら
+    registerPost = async (evt) => {
+        evt.preventDefault();
+        const date = app.firestore.Timestamp.now();
+        db.collection("expenseItems").add({
+            amount: this.state.amount,
+            date: date,
+            text: this.state.text,
+            uid: this.state.uid,
+        })
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+
+        //登録後、Topに移動
+        this.props.history.push("/react-pages/");
+    }
+
+     onChangeAmount = (evt) => {
+        this.setState({ amount: evt.target.value });
+    }
+
+     onChangeText = (evt) => {
+        this.setState({ text: evt.target.value });
+    }
+
+     onChangeUid = (evt) => {
+        this.setState({ uid: evt.target.value });
     }
 
     render(){
       return (
         <div>
-          <form onSubmit={this.handleSubmit} style={{marginTop: "4em"}}>
-              <textarea
-                type="text"
-                id="text"
-              />
+          <form onSubmit={this.registerPost} style={{marginTop: "4em"}}>
+              amount: <textarea
+                 name="amount"
+                 value={this.state.amount}
+                 onChange={this.onChangeAmount}>
+              </textarea><br/>
+              text: <textarea
+                 name="text"
+                 value={this.state.text}
+                 onChange={this.onChangeText}>
+              </textarea><br/>
+              uid: <textarea
+                 name="uid"
+                 value={this.state.uid}
+                 onChange={this.onChangeUid}>
+              </textarea><br/>
               <button type="submit">
                 send
               </button>
