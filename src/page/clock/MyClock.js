@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Selectbox from './components/Selectbox'
 import Clock from './components/Clock'
 
-class App extends Component {
+class MyClock extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -60,5 +60,5 @@ class App extends Component {
   };
 }
 
-export default App
+export default MyClock 
 

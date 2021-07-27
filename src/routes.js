@@ -1,21 +1,21 @@
-import Main from './page/main';
-import Sub from './page/sub';
-import Blog from './page/blog/index';
-import One from './page/one';
-import Todomatic from './page/todomatic/todomatic';
-import Qiita from './page/qiita/index';
-import QiitaSwift from './page/qiita/swift';
-import Simpletodo from './page/simpletodo/App';
-import Todolist from './page/todolist/App';
-import Counter from './page/counter/counter';
-import Tweet from './page/tweet/App';
-import Clock from './page/clock/App';
-import Test from './page/auth/Test';
+import Main from './page/Main';
+import Sub from './page/Sub';
+import Blog from './page/blog/Blog';
+import One from './page/One';
+import Todomatic from './page/todomatic/Todomatic';
+import Qiita from './page/qiita/Qiita';
+import QiitaSwift from './page/qiita/QiitaSwift';
+import Simpletodo from './page/simpletodo/SimpleTodo';
+import MyTodoList from './page/todolist/MyTodoList';
+import Counter from './page/counter/Counter';
+import Tweet from './page/tweet/Tweet';
+import MyClock from './page/clock/MyClock';
+import TestNavbar from './page/auth/TestNavbar';
 import Home from './page/firebase/components/Home';
 import Login from './page/firebase/auth/Login';
 import SignUp from './page/firebase/auth/SignUp';
-import FireStore from './page/firestore/App';
-import Index from './page/firestore/index';
+import Add from './page/firestore/Add';
+import Index from './page/firestore/Index';
 
 const routes = [
     { path: '/react-pages/', component: Main, exact : true},
@@ -27,15 +27,15 @@ const routes = [
     { path: '/react-pages/qiita', component: Qiita},
     { path: '/react-pages/qiitaswift', component: QiitaSwift},
     { path: '/react-pages/simpletodo', component: Simpletodo},
-    { path: '/react-pages/todolist', component: Todolist},
+    { path: '/react-pages/todolist', component: MyTodoList},
     { path: '/react-pages/counter', component: Counter},
     { path: '/react-pages/tweet', component: Tweet},
-    { path: '/react-pages/clock', component: Clock},
-    { path: '/react-pages/test', component: Test},
+    { path: '/react-pages/clock', component: MyClock},
+    { path: '/react-pages/testnavbar', component: TestNavbar},
     { path: '/react-pages/home', component: Home},
     { path: '/react-pages/login', component: Login},
     { path: '/react-pages/signup', component: SignUp},
-    { path: '/react-pages/firestore', component: FireStore},
+    { path: '/react-pages/add', component: Add},
     { path: '/react-pages/index', component: Index},
   ];
   

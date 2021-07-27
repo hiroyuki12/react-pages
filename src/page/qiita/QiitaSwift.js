@@ -1,10 +1,9 @@
 import React from 'react';
 import axios from "axios";
-import Search from "./Search";
-import Button from 'react-bootstrap/Button';
-import { Navbar, Nav } from 'react-bootstrap';
+import SearchSwift from "./SearchSwift";
+import MyNavbar from "../../components/MyNavbar";
 
-class Qiita extends React.Component {
+class QiitaSwift extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +16,7 @@ class Qiita extends React.Component {
 
   handleClick(target) {
     const limit = 40;
-    const url = `https://qiita.com/api/v2/tags/react/items?page=1&per_page=${limit}`;
+    const url = `https://qiita.com/api/v2/tags/swift/items?page=1&per_page=${limit}`;
     axios
       .get(url)
       .then((res) => {
@@ -31,7 +30,7 @@ class Qiita extends React.Component {
       return (
         <li className="item" key={index}>
           <span>{index}: </span>
-          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {item.created_at}
+          <a href={item.url}>{item.title}</a> {item.created_at}
         </li>
       );
     });
@@ -41,18 +40,12 @@ class Qiita extends React.Component {
   render() {
     return (
       <div>
-          <Navbar bg="dark" variant="dark">
-            <Nav className="mr-auto">
-              <Nav.Link href='/react-pages/'>Home</Nav.Link>
-              <Nav.Link href='/react-pages/qiita'>Qiita</Nav.Link>
-              <Nav.Link href='/react-pages/blog'>Blog</Nav.Link>
-            </Nav>
-          </Navbar >
-        <Search search={this.handleClick} />
+        <MyNavbar />
+        <SearchSwift search={this.handleClick} />
         <ul>{this.renderImageList(this.state.postsList)}</ul>
       </div>
     );
   }
 }
 
-export default Qiita;
+export default QiitaSwift;

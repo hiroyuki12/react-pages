@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Form from './Form'
 import List from  './List'
 
-export default class App extends Component {
+export default class SimpleTodo extends Component {
   constructor(props){
     super(props)
     this.state = {

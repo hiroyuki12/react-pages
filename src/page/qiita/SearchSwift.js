@@ -9,6 +9,8 @@ class SearchSwift extends React.Component {
   render() {
     return (
       <div>
+        <a href="https://mbp.hatenablog.com/entry/2021/07/15/214300" target="_blank" rel="noreferrer">ReactでQiita APIから記事情報を取得して表示</a><br />
+        <a href="https://qiita.com/kei_1011/items/cdc12086347025719152" target="_blank" rel="noreferrer">React Qiita API から記事情報を取得して表示させる - Qiita</a>
         <h2>QiitaでSwiftタグありの記事を表示</h2>
         <a href="qiita">React</a>
         <form onSubmit={this.handleSubmit}>

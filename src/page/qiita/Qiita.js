@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from "axios";
-import SearchSwift from "./SearchSwift";
+import Search from "./Search";
+import Button from 'react-bootstrap/Button';
+import MyNavbar from "../../components/MyNavbar";
 
-class QiitaSwift extends React.Component {
+class Qiita extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +17,7 @@ class QiitaSwift extends React.Component {
 
   handleClick(target) {
     const limit = 40;
-    const url = `https://qiita.com/api/v2/tags/swift/items?page=1&per_page=${limit}`;
+    const url = `https://qiita.com/api/v2/tags/react/items?page=1&per_page=${limit}`;
     axios
       .get(url)
       .then((res) => {
@@ -29,7 +31,7 @@ class QiitaSwift extends React.Component {
       return (
         <li className="item" key={index}>
           <span>{index}: </span>
-          <a href={item.url}>{item.title}</a> {item.created_at}
+          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {item.created_at}
         </li>
       );
     });
@@ -39,11 +41,12 @@ class QiitaSwift extends React.Component {
   render() {
     return (
       <div>
-        <SearchSwift search={this.handleClick} />
+        <MyNavbar />
+        <Search search={this.handleClick} />
         <ul>{this.renderImageList(this.state.postsList)}</ul>
       </div>
     );
   }
 }
 
-export default QiitaSwift;
+export default Qiita;

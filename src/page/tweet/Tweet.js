@@ -4,7 +4,7 @@ import './style.css';
 import Timeline   from "./components/Timeline";
 import TweetInput from "./components/TweetInput";
 
-class App extends Component {
+class Tweet extends Component {
   render() {
   const tweets = [
     {
@@ -34,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Tweet;

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { withRouter } from "react-router";
 import { AuthContext } from "./AuthProvider";
-import { Navbar, Nav } from 'react-bootstrap';
+import MyNavbar from "../../../components/MyNavbar";
 
 const Login = ({ history }) => {
   const { login } = useContext(AuthContext);
@@ -15,13 +15,7 @@ const Login = ({ history }) => {
 
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
-        <Nav className="mr-auto">
-          <Nav.Link href='/react-pages/'>Home</Nav.Link>
-          <Nav.Link href='/react-pages/qiita'>Qiita</Nav.Link>
-          <Nav.Link href='/react-pages/blog'>Blog</Nav.Link>
-        </Nav>
-      </Navbar >
+      <MyNavbar />
       <a href="https://mbp.hatenablog.com/entry/2021/07/25/100719?_ga=2.52584168.1977567373.1627048716-1359487452.1627048716" target="_blank" rel="noreferrer">ReactでFirebaseを使用してEmail・パスワードでの認証機能</a><br />
       <a href="https://qiita.com/k-penguin-sato/items/6e892231922b360a8659" target="_blank" rel="noreferrer">【React】 Firebaseを使用してEmail・パスワードでの認証機能の実装 - Qiita</a>
       <h1>Log in</h1>

@@ -3,7 +3,7 @@ import app, { db } from '../firebase/components/base';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 
-class App extends React.Component{
+class Add extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -92,4 +92,4 @@ class App extends React.Component{
     } 
 }
 
-export default App;
+export default Add;

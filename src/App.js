@@ -6,7 +6,7 @@ import PrivateRoute from "./page/firebase/auth/PrivateRoute";
 import { AuthProvider } from "./page/firebase/auth/AuthProvider";
 import Home from "./page/firebase/components/Home";
 import Index from "./page/firestore/index";
-import FireStore from "./page/firestore/app";
+import Add from "./page/firestore/add";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
          <Switch>
            <PrivateRoute exact path="/react-pages/home" component={Home} />
            <PrivateRoute exact path="/react-pages/index" component={Index} />
-           <PrivateRoute exact path="/react-pages/firestore" component={FireStore} />
+           <PrivateRoute exact path="/react-pages/add" component={Add} />
              {routes.map((route, idx) => (
                 <Route
                     path={route.path}

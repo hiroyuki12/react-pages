@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Navbar, Nav } from 'react-bootstrap';
 
-class Test extends Component {
+class TestNavbar extends Component {
     render() {
         return (
           <Navbar bg="dark" variant="dark">
@@ -15,4 +15,4 @@ class Test extends Component {
         );
     }
 }
-export default Test;
+export default TestNavbar;
