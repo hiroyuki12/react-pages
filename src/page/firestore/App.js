@@ -1,6 +1,7 @@
 import React from 'react';
 import app, { db } from '../firebase/components/base';
 import { Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 
 class App extends React.Component{
     constructor(props) {
@@ -35,7 +36,7 @@ class App extends React.Component{
             amount: this.state.amount,
             date: date,
             text: this.state.text,
-            uid: this.state.uid,
+            uid: "abcde",
         })
         .then(function() {
             console.log("Document successfully written!");
@@ -44,8 +45,8 @@ class App extends React.Component{
             console.error("Error writing document: ", error);
         });
 
-        //登録後、Topに移動
-        this.props.history.push("/react-pages/");
+        //登録後、indexに移動
+        this.props.history.push("/react-pages/index");
     }
 
      onChangeAmount = (evt) => {
@@ -63,26 +64,29 @@ class App extends React.Component{
     render(){
       return (
         <div>
+          <Navbar bg="dark" variant="dark">
+            <Nav className="mr-auto">
+              <Nav.Link href='/react-pages/'>Home</Nav.Link>
+              <Nav.Link href='/react-pages/qiita'>Qiita</Nav.Link>
+              <Nav.Link href='/react-pages/blog'>Blog</Nav.Link>
+            </Nav>
+          </Navbar >
           <form onSubmit={this.registerPost} style={{marginTop: "4em"}}>
-              amount: <textarea
-                 name="amount"
-                 value={this.state.amount}
-                 onChange={this.onChangeAmount}>
-              </textarea><br/>
-              text: <textarea
+              内容: <textarea
                  name="text"
                  value={this.state.text}
                  onChange={this.onChangeText}>
               </textarea><br/>
-              uid: <textarea
-                 name="uid"
-                 value={this.state.uid}
-                 onChange={this.onChangeUid}>
+              金額: <textarea
+                 name="amount"
+                 value={this.state.amount}
+                 onChange={this.onChangeAmount}>
               </textarea><br/>
               <button type="submit">
                 send
               </button>
             </form>
+            <button onClick={() => app.auth().signOut()}>Sign out</button>
         </div>
         )
     } 

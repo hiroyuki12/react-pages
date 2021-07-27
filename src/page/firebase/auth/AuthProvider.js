@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password, history) => {
     try {
       await app.auth().signInWithEmailAndPassword(email, password);
-      history.push("/react-pages/home");
+      history.push("/react-pages/firestore");
     } catch (error) {
       alert(error);
     }
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
   const signup = async (email, password, history) => {
     try {
       await app.auth().createUserWithEmailAndPassword(email, password);
-      history.push("/react-pages/home");
+      history.push("/react-pages/firestore");
     } catch (error) {
       alert(error);
     }

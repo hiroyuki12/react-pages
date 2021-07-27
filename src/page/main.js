@@ -11,7 +11,7 @@ class Main extends React.Component{
       <div className="App">
           <Navbar bg="dark" variant="dark">
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="/react-pages/">Home</Nav.Link>
               <Nav.Link href='/react-pages/qiita'>Qiita</Nav.Link>
               <Nav.Link href='/react-pages/blog'>Blog</Nav.Link>
             </Nav>
@@ -40,9 +40,9 @@ class Main extends React.Component{
           <Link to='/react-pages/qiita'>qiita</Link>
           <Link to='/react-pages/login'>Firebase(login)</Link>
           <Link to='/react-pages/signup'>Firebase(signup)</Link>
-          <Link to='/react-pages/home'>home(private)</Link>
-          <Link to='/react-pages/firestore'>FireStore</Link>
-          <Link to='/react-pages/index'>Index</Link>
+          <Link to='/react-pages/home'>Firebase home(private)</Link>
+          <Link to='/react-pages/firestore'>FireStore Set(private)</Link>
+          <Link to='/react-pages/index'>FireStore Get Index(private)</Link>
           <Link to='/react-pages/sub'>sub -)</Link>
         </header>
       </div>
