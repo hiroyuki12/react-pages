@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../logo.svg';
 import '../../App.css';
-import Button from 'react-bootstrap/Button';
 import { Navbar, Nav } from 'react-bootstrap';
 
 class Blog extends React.Component{

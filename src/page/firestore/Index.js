@@ -1,7 +1,6 @@
 import React from 'react';
 import app, { db } from '../firebase/components/base';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
+import MyNavbar from "../../components/MyNavbar";
 
 class Index extends React.Component{
 
@@ -36,13 +35,7 @@ class Index extends React.Component{
     console.log("items", items);
     return (
         <div>
-          <Navbar bg="dark" variant="dark">
-            <Nav className="mr-auto">
-              <Nav.Link href="/react-pages/">Home</Nav.Link>
-              <Nav.Link href='/react-pages/qiita'>Qiita</Nav.Link>
-              <Nav.Link href='/react-pages/blog'>Blog</Nav.Link>
-            </Nav>
-          </Navbar >
+          <MyNavbar />
           <ul>
             {items.map(item => (
               <li>

@@ -1,7 +1,6 @@
 import React from 'react';
 import app, { db } from '../firebase/components/base';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
+import MyNavbar from "../../components/MyNavbar";
 
 class Add extends React.Component{
     constructor(props) {
@@ -64,13 +63,7 @@ class Add extends React.Component{
     render(){
       return (
         <div>
-          <Navbar bg="dark" variant="dark">
-            <Nav className="mr-auto">
-              <Nav.Link href='/react-pages/'>Home</Nav.Link>
-              <Nav.Link href='/react-pages/qiita'>Qiita</Nav.Link>
-              <Nav.Link href='/react-pages/blog'>Blog</Nav.Link>
-            </Nav>
-          </Navbar >
+          <MyNavbar />
           <form onSubmit={this.registerPost} style={{marginTop: "4em"}}>
               内容: <textarea
                  name="text"

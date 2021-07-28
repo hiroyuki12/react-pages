@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from "axios";
 import Search from "./Search";
-import Button from 'react-bootstrap/Button';
 import MyNavbar from "../../components/MyNavbar";
 
 class Qiita extends React.Component {
