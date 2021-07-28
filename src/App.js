@@ -5,8 +5,8 @@ import './App.css';
 import PrivateRoute from "./page/firebase/auth/PrivateRoute";
 import { AuthProvider } from "./page/firebase/auth/AuthProvider";
 import Home from "./page/firebase/components/Home";
-import Index from "./page/firestore/index";
-import Add from "./page/firestore/add";
+import Index from "./page/firestore/Index";
+import Add from "./page/firestore/Add";
 
 function App() {
   return (
