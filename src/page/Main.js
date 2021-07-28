@@ -36,7 +36,21 @@ class Main extends React.Component{
           >
             環境構築
           </a>
-          <Link to='/react-pages/qiita'>qiita</Link>
+          <Link to='/react-pages/qiita'>Qiita(API)</Link>
+          <a
+            href='https://qiita.com/tags/react'
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Qiita(React) 外部サイト
+          </a>
+          <a
+            href='https://zenn.dev/topics/react?order=latest' 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Zenn(React) 外部サイト
+          </a>
           <Link to='/react-pages/login'>Firebase(login)</Link>
           <Link to='/react-pages/signup'>Firebase(signup)</Link>
           <Link to='/react-pages/home'>Firebase home(private)</Link>
