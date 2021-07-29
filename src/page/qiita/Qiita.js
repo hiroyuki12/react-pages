@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
+import moment from 'moment'
 
 class Qiita extends React.Component {
   constructor(props) {
@@ -30,8 +31,7 @@ class Qiita extends React.Component {
       return (
         <li className="item" key={index}>
 <img class="css-100alwu eyfquo10" src={item.user.profile_image_url} width="40" height="40" loading="lazy" />
-          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {item.created_at}
-          <span>[{index}] </span>
+          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created_at).fromNow()}
         </li>
       );
     });
