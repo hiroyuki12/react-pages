@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
+import Footer from "../../components/Footer";
 import moment from 'moment'
 
 class Qiita extends React.Component {
@@ -44,6 +45,7 @@ class Qiita extends React.Component {
         <MyNavbar />
         <Search search={this.handleClick} />
         <ul>{this.renderImageList(this.state.postsList)}</ul>
+        <Footer />
       </div>
     );
   }
