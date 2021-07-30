@@ -5,7 +5,7 @@ import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import moment from 'moment'
 
-class Qiita extends React.Component {
+class Mstdn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,7 @@ class Qiita extends React.Component {
 
   handleClick(target) {
     const limit = 40;
-    const url = `https://qiita.com/api/v2/tags/react/items?page=1&per_page=${limit}`;
+    const url = `https://mstdn.guru/api/v1/accounts/1/statuses`;
     axios
       .get(url)
       .then((res) => {
@@ -29,11 +29,12 @@ class Qiita extends React.Component {
 
   renderImageList(list) {
     const posts = list.map((item, index) => {
+    const title = item.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'')
       return (
         <li className="item" key={index}>
 
-<img class="css-100alwu eyfquo10" src={item.user.profile_image_url} width="40" height="40" loading="lazy" />
-          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created_at).fromNow()}
+<img class="css-100alwu eyfquo10" src={item.account.avatar} width="40" height="40" loading="lazy" />
+          <a href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created).fromNow()}
         </li>
       );
     });
@@ -52,4 +53,4 @@ class Qiita extends React.Component {
   }
 }
 
-export default Qiita;
+export default Mstdn;

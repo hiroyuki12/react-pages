@@ -37,6 +37,7 @@ class Main extends React.Component{
             環境構築
           </a>
           <Link to='/react-pages/qiita'>Qiita(API)</Link>
+          <Link to='/react-pages/mstdn'>Mstdn(API)</Link>
           <a
             href='https://qiita.com/tags/react'
             target="_blank"
