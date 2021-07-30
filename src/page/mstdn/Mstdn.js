@@ -34,7 +34,7 @@ class Mstdn extends React.Component {
         <li className="item" key={index}>
 
 <img class="css-100alwu eyfquo10" src={item.account.avatar} width="40" height="40" loading="lazy" />
-          <a href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created).fromNow()}
+          <a href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created_at).fromNow()}
         </li>
       );
     });
