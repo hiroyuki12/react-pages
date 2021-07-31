@@ -6,6 +6,7 @@ import Todomatic from './page/todomatic/Todomatic';
 import Qiita from './page/qiita/Qiita';
 import QiitaSwift from './page/qiita/QiitaSwift';
 import Mstdn from './page/mstdn/Mstdn';
+import Feedly from './page/feedly/Feedly';
 import Simpletodo from './page/simpletodo/SimpleTodo';
 import MyTodoList from './page/todolist/MyTodoList';
 import Counter from './page/counter/Counter';
@@ -28,6 +29,7 @@ const routes = [
     { path: '/react-pages/qiita', component: Qiita},
     { path: '/react-pages/qiitaswift', component: QiitaSwift},
     { path: '/react-pages/mstdn', component: Mstdn},
+    { path: '/react-pages/feedly', component: Feedly},
     { path: '/react-pages/simpletodo', component: Simpletodo},
     { path: '/react-pages/todolist', component: MyTodoList},
     { path: '/react-pages/counter', component: Counter},
