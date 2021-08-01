@@ -28,15 +28,15 @@ class StackOverFlow extends React.Component {
   }
 
   renderImageList(list) {
-    console.log('list=res.data.items')
-    console.log(list)
-
     const posts = list.map((item, index) => {
+      const dateTime = new Date(item.creation_date * 1000);
+      const dateTime2 = dateTime.toLocaleDateString('ja-JP') + ' ' + dateTime.toLocaleTimeString();
+      
       return (
         <li className="item" key={index}>
           <img class="css-100alwu eyfquo10" src={item.owner.profile_image} width="40" height="40" loading="lazy" />
-          <a href={item.link} target="_blank" rel="noreferrer">{item.title}</a>
-
+          <a href={item.link} target="_blank" rel="noreferrer">{item.title}</a> {moment(dateTime2).fromNow()} , 
+回答数:{item.answer_count} ,PV数:{item.view_count}
         </li>
       );
     });
