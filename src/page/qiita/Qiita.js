@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import moment from 'moment'
+import { userIntersection } from './hooks/intersection';
 
 class Qiita extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      postsList: []
+      postsList: [],
+      page: 1
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -17,12 +19,14 @@ class Qiita extends React.Component {
   }
 
   handleClick(target) {
-    const limit = 40;
-    const url = `https://qiita.com/api/v2/tags/react/items?page=1&per_page=${limit}`;
+    const limit = 10;
+    this.setState({ page: this.state.page + 1})
+    const page = this.state.page;
+    const url = `https://qiita.com/api/v2/tags/react/items?page=${page}&per_page=${limit}`;
     axios
       .get(url)
       .then((res) => {
-        this.setState({ postsList: res.data });
+        this.setState({ postsList: res.data});
       })
       .catch(console.error);
   }
@@ -45,6 +49,8 @@ class Qiita extends React.Component {
         <MyNavbar />
         <Search search={this.handleClick} />
         <ul>{this.renderImageList(this.state.postsList)}</ul>
+
+        <button onClick={this.handleClick}>もっと見る</button>
         <Footer />
       </div>
     );
