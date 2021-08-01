@@ -39,7 +39,7 @@ class Main extends React.Component{
           <Link to='/react-pages/qiita'>Qiita(API)</Link>
           <Link to='/react-pages/mstdn'>Mstdn(API)</Link>
           <Link to='/react-pages/stackoverflow'>StackOverFlow(API)</Link>
-          <Link to='/react-pages/teratail'>WIP Teratail(API)</Link>
+          <Link to='/react-pages/teratail'>Teratail(API)</Link>
           <a
             href='https://qiita.com/tags/react'
             target="_blank"
