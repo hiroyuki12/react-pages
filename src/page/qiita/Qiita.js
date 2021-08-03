@@ -19,14 +19,14 @@ class Qiita extends React.Component {
   }
 
   handleClick(target) {
-    const limit = 10;
+    const limit = 40;
     this.setState({ page: this.state.page + 1})
     const page = this.state.page;
     const url = `https://qiita.com/api/v2/tags/react/items?page=${page}&per_page=${limit}`;
     axios
       .get(url)
       .then((res) => {
-        this.setState({ postsList: res.data});
+        this.setState({ postsList: this.state.postsList.concat(res.data)});
       })
       .catch(console.error);
   }
