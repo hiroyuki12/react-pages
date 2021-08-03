@@ -18,12 +18,12 @@ class Feedly extends React.Component {
 
   handleClick(target) {
     const limit = 40;
-    const url = `https://cloud.feedly.com/v3/streams/contents?streamId=user/` + process.env.FEEDLY_USER_ID + '/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&continuation=99999999999999';
+    const url = `https://cloud.feedly.com/v3/streams/contents?streamId=user/` + "process.env.FEEDLY_USER_ID" + '/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&continuation=99999999999999';
 
     // Add a request interceptor
     axios.interceptors.request.use(function (config) {
-      config.headers.Authorization =  process.env.FEEDLY_TOKEN;
-      const token = process.env.FEEDLY_TOKEN;
+      config.headers.Authorization =  "process.env.FEEDLY_TOKEN";
+      const token = "process.env.FEEDLY_TOKEN";
 
       return config;
     });
