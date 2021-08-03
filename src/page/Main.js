@@ -54,11 +54,11 @@ class Main extends React.Component{
           >
             Zenn(React) 外部サイト
           </a>
-          <Link to='/react-pages/login'>Firebase(login)</Link>
-          <Link to='/react-pages/signup'>Firebase(signup)</Link>
-          <Link to='/react-pages/home'>Firebase home(private)</Link>
-          <Link to='/react-pages/add'>FireStore Add(private)</Link>
-          <Link to='/react-pages/index'>FireStore Get Index(private)</Link>
+          <Link to='/react-pages/login'>not Firebase(login)</Link>
+          <Link to='/react-pages/signup'>not Firebase(signup)</Link>
+          <Link to='/react-pages/home'>not Firebase home(private)</Link>
+          <Link to='/react-pages/add'>not FireStore Add(private)</Link>
+          <Link to='/react-pages/index'>not FireStore Get Index(private)</Link>
           <Link to='/react-pages/sub'>sub -)</Link>
         </header>
       </div>
