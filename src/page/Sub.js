@@ -19,6 +19,13 @@ class Sub extends React.Component{
             Edit <code>src/page/Sub.js</code> and save to reload.
           </p>
           <Link to='/react-pages/main'> (- main</Link>
+
+          <Link to='/react-pages/login'>not Firebase(login)</Link>
+          <Link to='/react-pages/signup'>not Firebase(signup)</Link>
+          <Link to='/react-pages/home'>not Firebase home(private)</Link>
+          <Link to='/react-pages/add'>not FireStore Add(private)</Link>
+          <Link to='/react-pages/index'>not FireStore Get Index(private)</Link>
+
           <Link to='/react-pages/simpletodo'>simpletodo</Link>
           <Link to='/react-pages/todolist'>todolist</Link>
           <Link to='/react-pages/counter'>counter</Link>
