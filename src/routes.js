@@ -6,6 +6,7 @@ import Todomatic from './page/todomatic/Todomatic';
 import Qiita from './page/qiita/Qiita';
 import QiitaSwift from './page/qiita/QiitaSwift';
 import Zenn from './page/zenn/Zenn';
+import ZennBooksTrend from './page/zenn/ZennBooksTrend';
 import Mstdn from './page/mstdn/Mstdn';
 import Feedly from './page/feedly/Feedly';
 import Teratail from './page/teratail/Teratail';
@@ -32,6 +33,7 @@ const routes = [
     { path: '/react-pages/qiita', component: Qiita},
     { path: '/react-pages/qiitaswift', component: QiitaSwift},
     { path: '/react-pages/zenn', component: Zenn},
+    { path: '/react-pages/zennbookstrend', component: ZennBooksTrend},
     { path: '/react-pages/mstdn', component: Mstdn},
     { path: '/react-pages/feedly', component: Feedly},
     { path: '/react-pages/teratail', component: Teratail},

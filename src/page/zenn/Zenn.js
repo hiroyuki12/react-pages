@@ -33,7 +33,7 @@ class Zenn extends React.Component {
       return (
         <li className="item" key={index}>
           <img src={item.user.avatarSmallUrl} width="50" height="50" loading="lazy" />
-          <a href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.publishedAt).fromNow()}
+          <a href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.publishedAt).fromNow()}  {item.likedCount} liked
         </li>
       );
     });
