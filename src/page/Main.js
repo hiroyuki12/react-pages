@@ -37,6 +37,13 @@ class Main extends React.Component{
             環境構築
           </a>
           <Link to='/react-pages/qiita'>Qiita(API)</Link>
+          <a
+            href='https://zenn.dev/topics/react?order=latest' 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Zenn(React) 外部サイト
+          </a>
           <Link to='/react-pages/mstdn'>Mstdn(API)</Link>
           <Link to='/react-pages/stackoverflow'>StackOverFlow(API)</Link>
           <Link to='/react-pages/teratail'>Teratail(API)</Link>
@@ -46,13 +53,6 @@ class Main extends React.Component{
             rel="noopener noreferrer"
           >
             Qiita(React) 外部サイト
-          </a>
-          <a
-            href='https://zenn.dev/topics/react?order=latest' 
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Zenn(React) 外部サイト
           </a>
           <Link to='/react-pages/sub'>sub -)</Link>
         </header>
