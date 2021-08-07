@@ -1,21 +1,40 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import moment from 'moment'
-import { userIntersection } from './hooks/intersection';
 
 class Qiita extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       postsList: [],
-      page: 1
+      page: 1,
+      message: ''
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.renderImageList = this.renderImageList.bind(this);
+  }
+
+  componentDidMount() {
+    let queue: NodeJS.Timeout;
+    window.addEventListener("scroll", () => {
+      clearTimeout(queue);
+      queue = setTimeout(() => {
+        const scroll_Y = document.documentElement.scrollTop + window.innerHeight;
+        const offsetHeight = document.documentElement.offsetHeight;
+
+        if(offsetHeight - scroll_Y <= 500 &&
+          this.state.message !== "loading..." &&
+          offsetHeight > 1500) {
+          this.message = "loading...";
+          this.handleClick();
+        }
+
+      }, 500);
+    });
   }
 
   handleClick(target) {
@@ -27,6 +46,8 @@ class Qiita extends React.Component {
       .get(url)
       .then((res) => {
         this.setState({ postsList: this.state.postsList.concat(res.data)});
+        this.setState({ message: "" });
+        this.message = '';
       })
       .catch(console.error);
   }
