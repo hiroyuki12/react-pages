@@ -37,6 +37,7 @@ class Main extends React.Component{
             環境構築
           </a>
           <Link to='/react-pages/qiita'>Qiita(API)</Link>
+          <Link to='/react-pages/zenn'>Zenn(API)</Link>
           <a
             href='https://zenn.dev/topics/react?order=latest' 
             target="_blank"

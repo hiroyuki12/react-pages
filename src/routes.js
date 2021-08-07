@@ -5,6 +5,7 @@ import One from './page/One';
 import Todomatic from './page/todomatic/Todomatic';
 import Qiita from './page/qiita/Qiita';
 import QiitaSwift from './page/qiita/QiitaSwift';
+import Zenn from './page/zenn/Zenn';
 import Mstdn from './page/mstdn/Mstdn';
 import Feedly from './page/feedly/Feedly';
 import Teratail from './page/teratail/Teratail';
@@ -30,6 +31,7 @@ const routes = [
     { path: '/react-pages/todomatic', component: Todomatic},
     { path: '/react-pages/qiita', component: Qiita},
     { path: '/react-pages/qiitaswift', component: QiitaSwift},
+    { path: '/react-pages/zenn', component: Zenn},
     { path: '/react-pages/mstdn', component: Mstdn},
     { path: '/react-pages/feedly', component: Feedly},
     { path: '/react-pages/teratail', component: Teratail},
