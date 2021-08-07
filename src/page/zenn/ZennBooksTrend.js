@@ -1,13 +1,16 @@
 import React from 'react';
 import axios from "axios";
-import SearchSwift from "./SearchSwift";
+import SearchBooksTrend from "./SearchBooksTrend";
 import MyNavbar from "../../components/MyNavbar";
+import Footer from "../../components/Footer";
+import moment from 'moment'
 
-class QiitaSwift extends React.Component {
+class ZennBooksTrend extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      postsList: []
+      postsList: [],
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -15,22 +18,22 @@ class QiitaSwift extends React.Component {
   }
 
   handleClick(target) {
-    const limit = 40;
-    const url = `https://qiita.com/api/v2/tags/swift/items?page=1&per_page=${limit}`;
+    const url = `https://zenn-api.netlify.app/.netlify/functions/trendBook`;
     axios
       .get(url)
       .then((res) => {
-        this.setState({ postsList: res.data });
+        this.setState({ postsList: this.state.postsList.concat(res.data)});
       })
       .catch(console.error);
   }
 
   renderImageList(list) {
     const posts = list.map((item, index) => {
+      const url = 'https://zenn.dev/' + item.user.username + '/books/' + item.slug;
       return (
         <li className="item" key={index}>
-          <span>{index}: </span>
-          <a href={item.url}>{item.title}</a> {item.created_at}
+          <img src={item.user.avatarSmallUrl} width="50" height="50" loading="lazy" />
+          <a href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.publishedAt).fromNow()}
         </li>
       );
     });
@@ -41,11 +44,12 @@ class QiitaSwift extends React.Component {
     return (
       <div>
         <MyNavbar />
-        <SearchSwift search={this.handleClick} />
+        <SearchBooksTrend search={this.handleClick} />
         <ul>{this.renderImageList(this.state.postsList)}</ul>
+        <Footer />
       </div>
     );
   }
 }
 
-export default QiitaSwift;
+export default ZennBooksTrend;

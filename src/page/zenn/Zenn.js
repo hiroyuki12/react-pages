@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useRefObject } from 'react';
+import React from 'react';
 import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
@@ -11,7 +11,6 @@ class Zenn extends React.Component {
     super(props);
     this.state = {
       postsList: [],
-      page: 1
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -19,9 +18,6 @@ class Zenn extends React.Component {
   }
 
   handleClick(target) {
-    const limit = 40;
-    this.setState({ page: this.state.page + 1})
-    const page = this.state.page;
     const url = `https://zenn-api.netlify.app/.netlify/functions/trendTech`;
     axios
       .get(url)
