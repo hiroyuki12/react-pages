@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import moment from 'moment'
 
-function Qiita() {
-  const [postsList, setPostsList] = useState([])
-  const [page, setPage] = useState(1)
-  const [message, setMessage] = useState('')
+class Qiita extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      postsList: [],
+      page: 1,
+      message: ''
+    };
 
-  const componentDidMount = () => {
+    this.handleClick = this.handleClick.bind(this);
+    this.renderImageList = this.renderImageList.bind(this);
+  }
+
+  componentDidMount() {
     let queue: NodeJS.Timeout;
     window.addEventListener("scroll", () => {
       clearTimeout(queue);
@@ -19,30 +27,32 @@ function Qiita() {
         const offsetHeight = document.documentElement.offsetHeight;
 
         if(offsetHeight - scroll_Y <= 500 &&
-          message !== "loading..." &&
+          this.state.message !== "loading..." &&
           offsetHeight > 1500) {
-          message = "loading...";
-          handleClick();
+          this.message = "loading...";
+          this.handleClick();
         }
 
       }, 500);
     });
   }
 
-  const handleClick = (target: string) => {
+  handleClick(target) {
     const limit = 40;
-    setPage(page + 1);
+    this.setState({ page: this.state.page + 1})
+    const page = this.state.page;
     const url = `https://qiita.com/api/v2/tags/react/items?page=${page}&per_page=${limit}`;
     axios
       .get(url)
       .then((res) => {
-        setPostsList(postsList.concat(res.data));
-        message = '';
+        this.setState({ postsList: this.state.postsList.concat(res.data)});
+        this.setState({ message: "" });
+        this.message = '';
       })
       .catch(console.error);
   }
 
-  const renderImageList = (list: string) => {
+  renderImageList(list) {
     const posts = list.map((item, index) => {
       return (
         <li className="item" key={index}>
@@ -54,16 +64,18 @@ function Qiita() {
     return posts;
   }
 
-  return (
-    <div>
-      <MyNavbar />
-      <Search search={handleClick} />
-      <ul>{renderImageList(postsList)}</ul>
+  render() {
+    return (
+      <div>
+        <MyNavbar />
+        <Search search={this.handleClick} />
+        <ul>{this.renderImageList(this.state.postsList)}</ul>
 
-      <button onClick={handleClick}>もっと見る</button>
-      <Footer />
-    </div>
-  );
+        <button onClick={this.handleClick}>もっと見る</button>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default Qiita;
