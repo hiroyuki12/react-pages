@@ -4,6 +4,7 @@ import Blog from './page/blog/Blog';
 import One from './page/One';
 import Todomatic from './page/todomatic/Todomatic';
 import Qiita from './page/qiita/Qiita';
+import QiitaFunction from './page/qiita/QiitaFunction';
 import QiitaSwift from './page/qiita/QiitaSwift';
 import Zenn from './page/zenn/Zenn';
 import ZennBooksTrend from './page/zenn/ZennBooksTrend';
@@ -31,6 +32,7 @@ const routes = [
     { path: '/react-pages/one', component: One},
     { path: '/react-pages/todomatic', component: Todomatic},
     { path: '/react-pages/qiita', component: Qiita},
+    { path: '/react-pages/qiitafunction', component: QiitaFunction},
     { path: '/react-pages/qiitaswift', component: QiitaSwift},
     { path: '/react-pages/zenn', component: Zenn},
     { path: '/react-pages/zennbookstrend', component: ZennBooksTrend},
