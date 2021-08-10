@@ -1,24 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
+import lodash from 'lodash';
 import moment from 'moment'
 
-class Qiita extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      postsList: [],
-      page: 1,
-      message: ''
+function Qiita() {
+  const [postsList, setPostsList] = useState([])
+  const [page, setPage] = useState(1)
+  const [message, setMessage] = useState('')
+
+  // 一番下に到達したら handleClickでページを更新
+  const handleScroll = lodash.throttle(() => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !==
+      document.documentElement.offsetHeight
+    ) {
+      return;
+    }
+
+    // 一番下に到達した時の処理
+    //if(message !== "loading...") {
+      setPage((prevCount) => prevCount + 1);  //NG
+      setMessage('loading...');
+      console.log('set loading');
+    //}
+
+  }, 500);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
     };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    this.handleClick = this.handleClick.bind(this);
-    this.renderImageList = this.renderImageList.bind(this);
-  }
+  // pageが変化した時に実行
+  useEffect(() => {
+    //document.title = `page = ${page}, message = ${message}`;
+    handleClick();
+    console.log('handleClick (useEffect)');
+  }, [page]); // Only re-run the effect if count changes
 
-  componentDidMount() {
+  const componentDidMount = () => {
     let queue: NodeJS.Timeout;
     window.addEventListener("scroll", () => {
       clearTimeout(queue);
@@ -27,32 +53,29 @@ class Qiita extends React.Component {
         const offsetHeight = document.documentElement.offsetHeight;
 
         if(offsetHeight - scroll_Y <= 500 &&
-          this.state.message !== "loading..." &&
+          message !== "loading..." &&
           offsetHeight > 1500) {
-          this.message = "loading...";
-          this.handleClick();
+          message = "loading...";
+          handleClick();
         }
 
       }, 500);
     });
   }
 
-  handleClick(target) {
+  const handleClick = (target: string) => {
     const limit = 40;
-    this.setState({ page: this.state.page + 1})
-    const page = this.state.page;
     const url = `https://qiita.com/api/v2/tags/react/items?page=${page}&per_page=${limit}`;
     axios
       .get(url)
       .then((res) => {
-        this.setState({ postsList: this.state.postsList.concat(res.data)});
-        this.setState({ message: "" });
-        this.message = '';
+        setPostsList(postsList.concat(res.data));
+        message = '';
       })
       .catch(console.error);
   }
 
-  renderImageList(list) {
+  const renderImageList = (list: string) => {
     const posts = list.map((item, index) => {
       return (
         <li className="item" key={index}>
@@ -64,18 +87,16 @@ class Qiita extends React.Component {
     return posts;
   }
 
-  render() {
-    return (
-      <div>
-        <MyNavbar />
-        <Search search={this.handleClick} />
-        <ul>{this.renderImageList(this.state.postsList)}</ul>
+  return (
+    <div>
+      <MyNavbar />
+      <Search search={handleClick} />
+      <ul>{renderImageList(postsList)}</ul>
 
-        <button onClick={this.handleClick}>繧ゅ▲縺ｨ隕九ｋ</button>
-        <Footer />
-      </div>
-    );
-  }
+      <button onClick={() => {setPage((prevCount) => prevCount + 1)}}>繧ゅ▲縺ｨ隕九ｋ</button>
+      <Footer />
+    </div>
+  );
 }
 
 export default Qiita;
