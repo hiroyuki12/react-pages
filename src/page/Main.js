@@ -35,8 +35,7 @@ function Main() {
         >
           環境構築
         </a>
-        <Link to='/react-pages/qiita'>Qiita(API)</Link>
-        <Link to='/react-pages/qiitafunction'>WIP Qiita(API) Function</Link>
+        <Link to='/react-pages/qiitafunction'>Qiita(API) Function</Link>
         <Link to='/react-pages/zenn'>Zenn(API)</Link>
         <a
           href='https://zenn.dev/topics/react?order=latest' 
