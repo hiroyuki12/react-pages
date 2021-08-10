@@ -1,14 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
+import lodash from 'lodash';
 import moment from 'moment'
 
 function QiitaFunction() {
   const [postsList, setPostsList] = useState([])
   const [page, setPage] = useState(1)
   const [message, setMessage] = useState('')
+
+  // 一番下に到達したら handleClickでページを更新
+  const handleScroll = lodash.throttle(() => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !==
+      document.documentElement.offsetHeight
+    ) {
+      return;
+    }
+
+    // 一番下に到達した時の処理
+    //if(message !== "loading...") {
+      setPage((prevCount) => prevCount + 1);  //NG
+      setMessage('loading...');
+      console.log('set loading');
+    //}
+
+  }, 500);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // pageが変化した時に実行
+  useEffect(() => {
+    //document.title = `page = ${page}, message = ${message}`;
+    handleClick();
+    console.log('handleClick (useEffect)');
+  }, [page]); // Only re-run the effect if count changes
 
   const componentDidMount = () => {
     let queue: NodeJS.Timeout;
@@ -31,7 +65,6 @@ function QiitaFunction() {
 
   const handleClick = (target: string) => {
     const limit = 40;
-    setPage(page + 1);
     const url = `https://qiita.com/api/v2/tags/react/items?page=${page}&per_page=${limit}`;
     axios
       .get(url)
@@ -60,7 +93,7 @@ function QiitaFunction() {
       <Search search={handleClick} />
       <ul>{renderImageList(postsList)}</ul>
 
-      <button onClick={handleClick}>繧ゅ▲縺ｨ隕九ｋ</button>
+      <button onClick={() => {setPage((prevCount) => prevCount + 1)}}>繧ゅ▲縺ｨ隕九ｋ</button>
       <Footer />
     </div>
   );
