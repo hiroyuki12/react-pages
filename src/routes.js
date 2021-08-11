@@ -28,6 +28,7 @@ import LoginGithub from './page/firebase/auth/LoginGithub';
 import LoginSpotify from './page/spotify/LoginSpotify';
 import SpotifyApp from './page/spotify/SpotifyApp';
 import ChartApp from './page/chart/ChartApp';
+import YoutubeApp from './page/youtube/YoutubeApp';
 
 const routes = [
     { path: '/react-pages/', component: Main, exact : true},
@@ -61,6 +62,7 @@ const routes = [
     { path: '/react-pages/loginspotify', component: LoginSpotify},
     { path: '/react-pages/spotifyapp', component: SpotifyApp},
     { path: '/react-pages/chart', component: ChartApp},
+    { path: '/react-pages/youtubeapp', component: YoutubeApp},
   ];
   
 export default routes;
