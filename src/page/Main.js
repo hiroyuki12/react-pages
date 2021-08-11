@@ -54,6 +54,13 @@ function Main() {
         >
           Qiita(React) 外部サイト
         </a>
+        <a
+          href='https://d.hatena.ne.jp/keyword/react'
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          はてなブログタグ(React) 外部サイト
+        </a>
         <Link to='/react-pages/spotifyapp'>Spotify App(API)</Link>
         <Link to='/react-pages/sub'>sub -)</Link>
       </header>
