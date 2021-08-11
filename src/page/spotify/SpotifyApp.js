@@ -1,4 +1,5 @@
 import React,{ useState, useEffect } from 'react';
+import axios from "axios";
 import LoginSpotify from './LoginSpotify';
 import LoggedIn from './LoggedIn';
 import { getTokenFromUrl } from './Spotify';
@@ -6,6 +7,7 @@ import { getTokenFromUrl } from './Spotify';
 function SpotifyApp() {
 
   const [token, setToken] = useState(null);
+  const [postsList, setPostsList] = useState([])
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -15,13 +17,29 @@ function SpotifyApp() {
 
     if (token) {
       setToken(token)
+      console.log(token);
     }
-
   }, [])
+
+  const handleClick = (target: string) => {
+    const url = `https://api.spotify.com/v1/playlists/37i9dQZF1DX9vYRBO9gjDe/tracks`;
+    axios
+      .get(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
+      })
+      .then((res) => {
+        setPostsList(postsList.concat(res.data));
+        console.log(res.data);
+      })
+      .catch(console.error);
+  }
 
   return (
     <div className="App">
       { token ? <LoggedIn/> : <LoginSpotify/> } 
+      <button onClick={handleClick}>Search</button>
     </div>
   );
 }
