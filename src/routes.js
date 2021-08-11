@@ -25,6 +25,7 @@ import SignUp from './page/firebase/auth/SignUp';
 import Add from './page/firestore/Add';
 import Index from './page/firestore/Index';
 import LoginGithub from './page/firebase/auth/LoginGithub';
+import LoginSpotify from './page/spotify/LoginSpotify';
 
 const routes = [
     { path: '/react-pages/', component: Main, exact : true},
@@ -55,6 +56,7 @@ const routes = [
     { path: '/react-pages/add', component: Add},
     { path: '/react-pages/index', component: Index},
     { path: '/react-pages/logingithub', component: LoginGithub},
+    { path: '/react-pages/loginspotify', component: LoginSpotify},
   ];
   
 export default routes;

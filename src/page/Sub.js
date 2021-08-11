@@ -25,7 +25,7 @@ function Sub() {
         <Link to='/react-pages/add'>not FireStore Add(private)</Link>
         <Link to='/react-pages/index'>not FireStore Get Index(private)</Link>
 
-        <Link to='/react-pages/logingithub'>WIP Firebase(login github)</Link>
+        <Link to='/react-pages/logingithub'>not Firebase(login github)</Link>
 
         <Link to='/react-pages/simpletodo'>simpletodo</Link>
         <Link to='/react-pages/todolist'>todolist</Link>

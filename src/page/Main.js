@@ -55,6 +55,7 @@ function Main() {
           Qiita(React) 外部サイト
         </a>
         <Link to='/react-pages/sub'>sub -)</Link>
+        <Link to='/react-pages/loginspotify'>Login Spotify(API)</Link>
       </header>
     </div>
   )
