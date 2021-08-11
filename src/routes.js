@@ -2,6 +2,7 @@ import Main from './page/Main';
 import Sub from './page/Sub';
 import Blog from './page/blog/Blog';
 import One from './page/One';
+import DogImage from './page/dogimage/DogImage';
 import Todomatic from './page/todomatic/Todomatic';
 import QiitaClass from './page/qiita/QiitaClass';
 import Qiita from './page/qiita/Qiita';
@@ -30,6 +31,7 @@ const routes = [
     { path: '/react-pages/sub', component: Sub},
     { path: '/react-pages/blog', component: Blog},
     { path: '/react-pages/one', component: One},
+    { path: '/react-pages/dogimage', component: DogImage},
     { path: '/react-pages/todomatic', component: Todomatic},
     { path: '/react-pages/qiitaclass', component: QiitaClass},
     { path: '/react-pages/qiita', component: Qiita},

@@ -33,6 +33,7 @@ function Sub() {
         <Link to='/react-pages/clock'>clock</Link>
         <Link to='/react-pages/testnavbar'>testnavbar</Link>
         <Link to='/react-pages/one'>one</Link>
+        <Link to='/react-pages/dogimage'>dogimage</Link>
       </header>
     </div>
   )
