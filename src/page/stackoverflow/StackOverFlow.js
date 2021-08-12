@@ -1,33 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import moment from 'moment'
 
-class StackOverFlow extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      postsList: [],
-    };
+function StackOverFlow() {
+  const [postsList, setPostsList] = useState([])
+  const [page, setPage] = useState(1)
 
-    this.handleClick = this.handleClick.bind(this);
-    this.renderImageList = this.renderImageList.bind(this);
-  }
+  // page‚ª•Ï‰»‚µ‚½Žž‚ÉŽÀs
+  useEffect(() => {
+    //document.title = `page = ${page}, message = ${message}`;
+    handleClick();
+    console.log('handleClick (useEffect)');
+  }, [page]); // Only re-run the effect if count changes
 
-  handleClick(target) {
+  const handleClick = (target: string) => {
     const limit = 40;
     const url = `https://api.stackexchange.com/2.2/questions?page=1&order=desc&sort=activity&tagged=react&site=ja.stackoverflow`;
     axios
       .get(url)
       .then((res) => {
-        this.setState({ postsList: res.data.items });
+        setPostsList(res.data.items);
       })
       .catch(console.error);
   }
 
-  renderImageList(list) {
+  const renderImageList = (list: string) => {
     const posts = list.map((item, index) => {
       const dateTime = new Date(item.creation_date * 1000);
       const dateTime2 = dateTime.toLocaleDateString('ja-JP') + ' ' + dateTime.toLocaleTimeString();
@@ -43,16 +43,14 @@ class StackOverFlow extends React.Component {
     return posts;
   }
 
-  render() {
-    return (
-      <div>
-        <MyNavbar />
-        <Search search={this.handleClick} />
-        <ul>{this.renderImageList(this.state.postsList)}</ul>
-        <Footer />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <MyNavbar />
+      <Search search={handleClick} />
+      <ul>{renderImageList(postsList)}</ul>
+      <Footer />
+    </div>
+  );
 }
 
 export default StackOverFlow;
