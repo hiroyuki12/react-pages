@@ -19,13 +19,13 @@ function Sub() {
         </p>
         <Link to='/react-pages/main'> (- main</Link>
 
-        <Link to='/react-pages/login'>not Firebase(login)</Link>
-        <Link to='/react-pages/signup'>not Firebase(signup)</Link>
-        <Link to='/react-pages/home'>not Firebase home(private)</Link>
-        <Link to='/react-pages/add'>not FireStore Add(private)</Link>
-        <Link to='/react-pages/index'>not FireStore Get Index(private)</Link>
+        <Link to='/react-pages/login'>(Need API Key) Firebase(login)</Link>
+        <Link to='/react-pages/signup'>(Need API Key)Firebase(signup)</Link>
+        <Link to='/react-pages/home'>(Need API Key)Firebase home(private)</Link>
+        <Link to='/react-pages/add'>(Need API Key)FireStore Add(private)</Link>
+        <Link to='/react-pages/index'>(Need API Key)FireStore Get Index(private)</Link>
 
-        <Link to='/react-pages/logingithub'>not Firebase(login github)</Link>
+        <Link to='/react-pages/logingithub'>(Need API Key)Firebase(login github)</Link>
 
         <Link to='/react-pages/simpletodo'>simpletodo</Link>
         <Link to='/react-pages/todolist'>todolist</Link>
@@ -38,7 +38,7 @@ function Sub() {
         <Link to='/react-pages/dogimage'>Dog Image</Link>
         <Link to='/react-pages/chart'>chart</Link>
         <Link to='/react-pages/spotifyapp'>Spotify App(API)</Link>
-        <Link to='/react-pages/youtubeapp'>not Youtube(API)</Link>
+        <Link to='/react-pages/youtubeapp'>(Need API Key)Youtube(API)</Link>
       </header>
     </div>
   )
