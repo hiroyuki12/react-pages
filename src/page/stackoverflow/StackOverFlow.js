@@ -3,11 +3,39 @@ import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
-import moment from 'moment'
+import lodash from 'lodash';
+import moment from 'moment';
 
 function StackOverFlow() {
   const [postsList, setPostsList] = useState([])
   const [page, setPage] = useState(1)
+  const [isLoading, setIsLoading] = useState(false)
+
+  // 一番下に到達したら handleClickでページを更新
+  const handleScroll = lodash.throttle(() => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !==
+      document.documentElement.offsetHeight
+    ) {
+      return;
+    }
+
+    // 一番下に到達した時の処理
+    //if(message !== "loading...") {
+      setPage((prevCount) => prevCount + 1);  //NG
+      console.log('page count + 1');
+    //}
+
+  }, 500);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
 
   // pageが変化した時に実行
   useEffect(() => {
@@ -17,12 +45,13 @@ function StackOverFlow() {
   }, [page]); // Only re-run the effect if count changes
 
   const handleClick = (target: string) => {
-    const limit = 40;
-    const url = `https://api.stackexchange.com/2.2/questions?page=1&order=desc&sort=activity&tagged=react&site=ja.stackoverflow`;
+    const url = `https://api.stackexchange.com/2.2/questions?page=${page}&order=desc&sort=activity&tagged=react&site=ja.stackoverflow`;
+    setIsLoading(true);
     axios
       .get(url)
       .then((res) => {
-        setPostsList(res.data.items);
+        setPostsList(postsList.concat(res.data.items));
+        setIsLoading(false);
       })
       .catch(console.error);
   }
@@ -48,6 +77,12 @@ function StackOverFlow() {
       <MyNavbar />
       <Search search={handleClick} />
       <ul>{renderImageList(postsList)}</ul>
+
+      {isLoading ? (
+        <div>Loading ...</div>
+      ) : (
+        <div>Not Loading</div>
+      )}
       <Footer />
     </div>
   );
