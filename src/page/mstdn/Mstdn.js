@@ -9,9 +9,16 @@ function Mstdn() {
   const [postsList, setPostsList] = useState([])
   const [maxId, setMaxId] = useState('999999999999999999')
 
+  // maxId‚ª•Ï‰»‚µ‚½Žž‚ÉŽÀs
+  useEffect(() => {
+    //document.title = `page = ${page}, message = ${message}`;
+    handleClick();
+    console.log('handleClick (useEffect)');
+  }, [maxId]); // Only re-run the effect if count changes
+
   const handleClick = (target: string) => {
     const limit = 40;
-    const url = `https://mstdn.guru/api/v1/accounts/1/statuses?max_id=` + this.maxId;
+    const url = `https://mstdn.guru/api/v1/accounts/1/statuses?max_id=` + maxId;
     console.log(url);
     axios
       .get(url)
@@ -29,7 +36,6 @@ function Mstdn() {
         if(index == 19) {
           console.log('Hello 19');
           console.log(item);
-          setMaxId(item.id);
         }
         return (
           <li className="item" key={index}>
@@ -40,9 +46,9 @@ function Mstdn() {
       }
       else {
         if(index == 19) {
-          console.log('Hello 19');
+          console.log('Hello 19 reblog');
           console.log(item);
-          this.maxId = item.id;
+          setMaxId(item.id);
         }
         return (
           <li className="item" key={index}>
@@ -60,8 +66,6 @@ function Mstdn() {
       <MyNavbar />
       <Search search={handleClick} />
       <ul>{renderImageList(postsList)}</ul>
-
-      <button onClick={handleClick}>more page</button><br /><br />
 
       <Footer />
     </div>
