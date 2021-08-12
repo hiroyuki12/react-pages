@@ -8,6 +8,7 @@ import moment from 'moment'
 function Mstdn() {
   const [postsList, setPostsList] = useState([])
   const [maxId, setMaxId] = useState('999999999999999999')
+  const [isLoading, setIsLoading] = useState(false)
 
   // maxId‚ª•Ï‰»‚µ‚½Žž‚ÉŽÀs
   useEffect(() => {
@@ -20,10 +21,12 @@ function Mstdn() {
     const limit = 40;
     const url = `https://mstdn.guru/api/v1/accounts/1/statuses?max_id=` + maxId;
     console.log(url);
+    setIsLoading(true);
     axios
       .get(url)
       .then((res) => {
         setPostsList(postsList.concat(res.data));
+        setIsLoading(false);
       })
       .catch(console.error);
   }
@@ -67,6 +70,11 @@ function Mstdn() {
       <Search search={handleClick} />
       <ul>{renderImageList(postsList)}</ul>
 
+      {isLoading ? (
+        <div>Loading ...</div>
+      ) : (
+        <div>Not Loading</div>
+      )}
       <Footer />
     </div>
   );
