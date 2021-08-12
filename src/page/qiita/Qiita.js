@@ -10,6 +10,7 @@ function Qiita() {
   const [postsList, setPostsList] = useState([])
   const [page, setPage] = useState(1)
   const [message, setMessage] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   // 一番下に到達したら handleClickでページを更新
   const handleScroll = lodash.throttle(() => {
@@ -52,6 +53,7 @@ function Qiita() {
         const scroll_Y = document.documentElement.scrollTop + window.innerHeight;
         const offsetHeight = document.documentElement.offsetHeight;
 
+        console.log(message);
         if(offsetHeight - scroll_Y <= 500 &&
           message !== "loading..." &&
           offsetHeight > 1500) {
@@ -66,10 +68,12 @@ function Qiita() {
   const handleClick = (target: string) => {
     const limit = 40;
     const url = `https://qiita.com/api/v2/tags/react/items?page=${page}&per_page=${limit}`;
+    setIsLoading(true);
     axios
       .get(url)
       .then((res) => {
         setPostsList(postsList.concat(res.data));
+        setIsLoading(false);
         message = '';
       })
       .catch(console.error);
@@ -94,6 +98,11 @@ function Qiita() {
       <ul>{renderImageList(postsList)}</ul>
 
       <button onClick={() => {setPage((prevCount) => prevCount + 1)}}>繧ゅ▲縺ｨ隕九ｋ</button>
+      {isLoading ? (
+        <div>Loading ...</div>
+      ) : (
+        <div>Not Loading</div>
+      )}
       <Footer />
     </div>
   );
