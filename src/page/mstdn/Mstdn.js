@@ -1,36 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import moment from 'moment'
 
-class Mstdn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      postsList: [],
-      maxId: '999999999999999999',
-    };
+function Mstdn() {
+  const [postsList, setPostsList] = useState([])
+  const [maxId, setMaxId] = useState('999999999999999999')
 
-    this.handleClick = this.handleClick.bind(this);
-    this.renderImageList = this.renderImageList.bind(this);
-    this.maxId = '999999999999999999';
-  }
-
-  handleClick(target) {
+  const handleClick = (target: string) => {
     const limit = 40;
     const url = `https://mstdn.guru/api/v1/accounts/1/statuses?max_id=` + this.maxId;
     console.log(url);
     axios
       .get(url)
       .then((res) => {
-        this.setState({ postsList: this.state.postsList.concat(res.data) });
+        setPostsList(postsList.concat(res.data));
       })
       .catch(console.error);
   }
 
-  renderImageList(list) {
+  const renderImageList = (list: string) => {
     const posts = list.map((item, index) => {
       const title = item.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'')
       const reblog = item.reblog
@@ -38,7 +29,7 @@ class Mstdn extends React.Component {
         if(index == 19) {
           console.log('Hello 19');
           console.log(item);
-          this.maxId = item.id;
+          setMaxId(item.id);
         }
         return (
           <li className="item" key={index}>
@@ -64,19 +55,17 @@ class Mstdn extends React.Component {
     return posts;
   }
 
-  render() {
-    return (
-      <div>
-        <MyNavbar />
-        <Search search={this.handleClick} />
-        <ul>{this.renderImageList(this.state.postsList)}</ul>
+  return (
+    <div>
+      <MyNavbar />
+      <Search search={handleClick} />
+      <ul>{renderImageList(postsList)}</ul>
 
-        <button onClick={this.handleClick}>more page</button><br /><br />
+      <button onClick={handleClick}>more page</button><br /><br />
 
-        <Footer />
-      </div>
-    );
-  }
+      <Footer />
+    </div>
+  );
 }
 
 export default Mstdn;
