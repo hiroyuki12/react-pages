@@ -37,6 +37,8 @@ function Sub() {
         <Link to='/react-pages/one'>one</Link>
         <Link to='/react-pages/dogimage'>Dog Image</Link>
         <Link to='/react-pages/chart'>chart</Link>
+        <Link to='/react-pages/spotifyapp'>Spotify App(API)</Link>
+        <Link to='/react-pages/youtubeapp'>not Youtube(API)</Link>
       </header>
     </div>
   )

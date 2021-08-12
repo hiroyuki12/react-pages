@@ -61,8 +61,6 @@ function Main() {
         >
           はてなブログタグ(React) 外部サイト
         </a>
-        <Link to='/react-pages/spotifyapp'>Spotify App(API)</Link>
-        <Link to='/react-pages/youtubeapp'>not Youtube(API)</Link>
         <Link to='/react-pages/sub'>sub -)</Link>
       </header>
     </div>
