@@ -9,7 +9,6 @@ import moment from 'moment'
 function Qiita() {
   const [postsList, setPostsList] = useState([])
   const [page, setPage] = useState(1)
-  const [message, setMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
   // 一番下に到達したら handleClickでページを更新
@@ -24,8 +23,7 @@ function Qiita() {
     // 一番下に到達した時の処理
     //if(message !== "loading...") {
       setPage((prevCount) => prevCount + 1);  //NG
-      setMessage('loading...');
-      console.log('set loading');
+      console.log('page count + 1');
     //}
 
   }, 500);
@@ -45,26 +43,6 @@ function Qiita() {
     console.log('handleClick (useEffect)');
   }, [page]); // Only re-run the effect if count changes
 
-  const componentDidMount = () => {
-    let queue: NodeJS.Timeout;
-    window.addEventListener("scroll", () => {
-      clearTimeout(queue);
-      queue = setTimeout(() => {
-        const scroll_Y = document.documentElement.scrollTop + window.innerHeight;
-        const offsetHeight = document.documentElement.offsetHeight;
-
-        console.log(message);
-        if(offsetHeight - scroll_Y <= 500 &&
-          message !== "loading..." &&
-          offsetHeight > 1500) {
-          message = "loading...";
-          handleClick();
-        }
-
-      }, 500);
-    });
-  }
-
   const handleClick = (target: string) => {
     const limit = 40;
     const url = `https://qiita.com/api/v2/tags/react/items?page=${page}&per_page=${limit}`;
@@ -74,7 +52,6 @@ function Qiita() {
       .then((res) => {
         setPostsList(postsList.concat(res.data));
         setIsLoading(false);
-        message = '';
       })
       .catch(console.error);
   }
