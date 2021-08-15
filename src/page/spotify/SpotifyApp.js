@@ -38,6 +38,7 @@ function SpotifyApp() {
 
   return (
     <div className="App">
+      <a href="https://mbp.hatenablog.com/entry/2021/08/11/214057" target="_blank" rel="noreferrer">Spotify APIを使ってログインしてSpotify Japan 急上昇チャートを取得</a><br />
       { token ? <LoggedIn/> : <LoginSpotify/> } 
       <button onClick={handleClick}>Search</button>
     </div>
