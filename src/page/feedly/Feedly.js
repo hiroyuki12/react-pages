@@ -7,15 +7,25 @@ import moment from 'moment'
 
 function Feedly() {
   const [postsList, setPostsList] = useState([])
+  const [page, setPage] = useState(1)
+  const [isLoading, setIsLoading] = useState(false)
+
+  // pageが変化した時に実行
+  useEffect(() => {
+    //document.title = `page = ${page}, message = ${message}`;
+    handleClick();
+    console.log('handleClick (useEffect)');
+  }, [page]); // Only re-run the effect if count changes
 
   const handleClick = (target: string) => {
     const limit = 40;
     const url = 'https://34pb4eo559.execute-api.us-east-1.amazonaws.com/default/test';
-
-   axios
+    setIsLoading(true);
+    axios
       .get(url)
       .then((res) => {
         setPostsList(postsList.concat(res.data.items));
+        setIsLoading(false);
         console.log("res.data.items");
         console.log(res.data.items);
       })
@@ -40,6 +50,11 @@ function Feedly() {
       <MyNavbar />
       <Search search={handleClick} />
       <ul>{renderImageList(postsList)}</ul>
+      {isLoading ? (
+        <div>Loading ...</div>
+      ) : (
+        <div>Not Loading</div>
+      )}
       <Footer />
     </div>
   );
