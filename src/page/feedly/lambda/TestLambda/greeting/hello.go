@@ -8,10 +8,10 @@ import(
   "encoding/json"
 )
 type MyResponse struct {
-	Items []Item   `json:"items"`
+  Items []Item   `json:"items"`
 }
 type Stream struct {
-    Items []Item `json:"items"`
+  Items []Item `json:"items"`
 }
 type Item struct {
 //    ID       string   `json:"id"`
@@ -42,7 +42,7 @@ func SayHello() (MyResponse, error) {
   fmt.Println("Hello Golang!!")
 
   //res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/It&unreadOnly=true")
-  res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&unreadOnly=true")
+  res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&continuation=1629027653000&unreadOnly=true")
 
   var stream Stream
   json.NewDecoder(res.Body).Decode(&stream)
