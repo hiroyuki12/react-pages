@@ -19,15 +19,16 @@ function Feedly() {
 
   const handleClick = (target: string) => {
     const limit = 40;
-    const url = 'https://34pb4eo559.execute-api.us-east-1.amazonaws.com/default/test';
+    //const url = 'https://34pb4eo559.execute-api.us-east-1.amazonaws.com/default/test';
+    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly';
     setIsLoading(true);
     axios
       .get(url)
       .then((res) => {
         setPostsList(postsList.concat(res.data.items));
         setIsLoading(false);
-        console.log("res.data.items");
-        console.log(res.data.items);
+        //console.log("res.data.items");
+        //console.log(res.data.items);
       })
       .catch(console.error);
   }
