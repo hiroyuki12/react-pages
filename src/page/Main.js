@@ -61,6 +61,7 @@ function Main() {
         >
           はてなブログタグ(React) 外部サイト
         </a>
+        <Link to='/react-pages/feedly'>WIP Feedly(API)</Link>
         <Link to='/react-pages/sub'>sub -)</Link>
       </header>
     </div>

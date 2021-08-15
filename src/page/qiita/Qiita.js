@@ -4,7 +4,7 @@ import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import lodash from 'lodash';
-import moment from 'moment'
+import moment from 'moment';
 
 function Qiita() {
   const [postsList, setPostsList] = useState([])

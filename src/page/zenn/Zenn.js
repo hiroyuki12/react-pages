@@ -7,6 +7,7 @@ import moment from 'moment'
 
 function Zenn() {
   const [postsList, setPostsList] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     handleClick();
@@ -16,10 +17,12 @@ function Zenn() {
 
   const handleClick = (target: string) => {
     const url = `https://zenn-api.netlify.app/.netlify/functions/trendTech`;
+    setIsLoading(true);
     axios
       .get(url)
       .then((res) => {
         setPostsList(postsList.concat(res.data));
+        setIsLoading(false);
       })
       .catch(console.error);
   }
@@ -42,6 +45,11 @@ function Zenn() {
       <MyNavbar />
       <Search search={handleClick} />
       <ul>{renderImageList(postsList)}</ul>
+      {isLoading ? (
+        <div>Loading ...</div>
+      ) : (
+        <div>Not Loading</div>
+      )}
       <Footer />
     </div>
   );
