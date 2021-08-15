@@ -35,10 +35,11 @@ function Feedly() {
   const renderImageList = (list: string) => {
     const posts = list.map((item, index) => {
       const imgsrc = "https://cdn.profile-image.st-hatena.com/users/" + item.author + "/profile.gif"
+      const date = new Date(item.published)
       return (
         <li className="item" key={index}>
           <img src={imgsrc} width="50" height="50" loading="lazy" />
-          <a href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a>
+          <a href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a> {moment(date).fromNow()}
         </li>
       );
     });
