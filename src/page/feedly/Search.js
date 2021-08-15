@@ -9,8 +9,8 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <a href="https://mbp.hatenablog.com/entry/2021/07/15/214300" target="_blank" rel="noreferrer"></a><br />
-        <a href="https://qiita.com/kei_1011/items/cdc12086347025719152" target="_blank" rel="noreferrer"></a>
+        <a href="https://mbp.hatenablog.com/entry/2021/08/14/111848?_ga=2.196489130.788221064.1628304800-1619804006.1627465715" target="_blank" rel="noreferrer">AWS Lambda Hello World、Feedly APIの呼び出し</a><br />
+        <a href="https://glasses-dog.hateblo.jp/search?q=feedly+Cloud" target="_blank" rel="noreferrer">feedly Cloud APIでカスタムRSSリーダーを作る - Glasses Dogの雑記</a>
         <h2>Feedlyのhbfav記事を表示</h2>
         <a href="qiitaswift"></a>
         <form onSubmit={this.handleSubmit}>
