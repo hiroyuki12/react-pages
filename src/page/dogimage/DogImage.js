@@ -86,6 +86,7 @@ function DogImage() {
       <Header />
       <Main />
       <Footer />
+      <a href="https://mbp.hatenablog.com/entry/2021/08/11/090712" target="_blank" rel="noreferrer">Cute Dog Images</a><br />
       <Link to='/react-pages'>/reactpages</Link>
     </div>
   )
