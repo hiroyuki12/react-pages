@@ -27,7 +27,7 @@ function Feedly() {
       return (
         <li className="item" key={index}>
 
-          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a>
+          <a href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a>
         </li>
       );
     });
