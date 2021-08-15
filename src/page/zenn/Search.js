@@ -9,7 +9,7 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <a href="https://mbp.hatenablog.com/entry/2021/07/15/214300" target="_blank" rel="noreferrer"></a><br />
+        <a href="https://mbp.hatenablog.com/entry/2021/08/09/152334" target="_blank" rel="noreferrer">Netlify FunctionsでZenn Trend APIを作成</a><br />
         <a href="https://qiita.com/kei_1011/items/cdc12086347025719152" target="_blank" rel="noreferrer"></a>
         <h2>ZennのTechトレンドの記事を表示</h2>
         <a href="zennbookstrend">Booksトレンド</a>
