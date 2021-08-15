@@ -10,18 +10,14 @@ function Feedly() {
 
   const handleClick = (target: string) => {
     const limit = 40;
-    const url = `https://cloud.feedly.com/v3/streams/contents?streamId=user/` + "process.env.FEEDLY_USER_ID" + '/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&continuation=99999999999999';
-    const url2 = 'https://qiita.com/api/v2/tags/react/items';
+    const url = 'https://34pb4eo559.execute-api.us-east-1.amazonaws.com/default/test';
 
    axios
-      .get(url, {
-        headers: {
-          Authorization: 'Bearer FEEDLY_DEVELOPER_TOKEN',
-          'Access-Control-Allow-Origin': '*',
-        }
-      })
+      .get(url)
       .then((res) => {
-        setPostsList(postsList.concat(res.data));
+        setPostsList(postsList.concat(res.data.items));
+        console.log("res.data.items");
+        console.log(res.data.items);
       })
       .catch(console.error);
   }
@@ -31,8 +27,7 @@ function Feedly() {
       return (
         <li className="item" key={index}>
 
-<img className="css-100alwu eyfquo10" src={item.user.profile_image_url} width="40" height="40" loading="lazy" />
-          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created_at).fromNow()}
+          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a>
         </li>
       );
     });
