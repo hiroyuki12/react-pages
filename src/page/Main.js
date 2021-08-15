@@ -36,6 +36,7 @@ function Main() {
           環境構築
         </a>
         <Link to='/react-pages/qiita'>Qiita(API) Function</Link>
+        <Link to='/react-pages/feedly'>Feedly(API)</Link>
         <Link to='/react-pages/zenn'>Zenn(API)</Link>
         <a
           href='https://zenn.dev/topics/react?order=latest' 
@@ -61,7 +62,6 @@ function Main() {
         >
           はてなブログタグ(React) 外部サイト
         </a>
-        <Link to='/react-pages/feedly'>WIP Feedly(API)</Link>
         <Link to='/react-pages/sub'>sub -)</Link>
       </header>
     </div>
