@@ -10,7 +10,7 @@ class Search extends React.Component {
     return (
       <div>
         <a href="https://mbp.hatenablog.com/entry/2021/08/09/152334" target="_blank" rel="noreferrer">Netlify FunctionsでZenn Trend APIを作成</a><br />
-        <a href="https://qiita.com/kei_1011/items/cdc12086347025719152" target="_blank" rel="noreferrer"></a>
+        <a href="https://mbp.hatenablog.com/entry/2021/08/07/144120" target="_blank" rel="noreferrer">非公式ZennトレンドAPIを使って表示</a>
         <h2>ZennのTechトレンドの記事を表示</h2>
         <a href="zennbookstrend">Booksトレンド</a>
         <form onSubmit={this.handleSubmit}>
