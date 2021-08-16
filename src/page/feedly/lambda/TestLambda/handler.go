@@ -7,7 +7,8 @@ import(
 )
 
 func excuteFunction(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error){
-  res, err := greeting.SayHello()
+  //res, err := greeting.SayHello("1629117655000")
+  res, err := greeting.SayHello("9999999999999")
   if err != nil {
     return events.APIGatewayProxyResponse{
       Body:       err.Error(),

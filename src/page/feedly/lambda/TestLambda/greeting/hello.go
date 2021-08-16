@@ -38,12 +38,12 @@ type Alternate struct {
 
 //他のディレクトリ(パッケージ)から呼び出される関数は大文字から始まる必要があります。
 //意外と間違えやすいポイントなので注意しましょう。
-func SayHello() (MyResponse, error) {
+func SayHello(continuation string) (MyResponse, error) {
   fmt.Println("Hello Golang!!")
 
   //res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/It&unreadOnly=true")
-  //res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&continuation=1629027653000&unreadOnly=true")
-  res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&unreadOnly=true&count=100")
+  res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&continuation=" + continuation + "&unreadOnly=true&count=100")
+  //res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&unreadOnly=true&count=100")
 
   var stream Stream
   json.NewDecoder(res.Body).Decode(&stream)
