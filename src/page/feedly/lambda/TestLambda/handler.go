@@ -7,8 +7,22 @@ import(
 )
 
 func excuteFunction(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error){
+  var continuation		string
+  var continuationIsNotNull	bool
+
+  if len(request.QueryStringParameters) == 0 {
+    continuation = "999999999998"
+  } else {
+    if continuation, continuationIsNotNull = request.QueryStringParameters["continuation"]; !continuationIsNotNull {
+      continuation = "999999999997"
+    }
+  }
+
+  //continuation = "9999999999999"
+
   //res, err := greeting.SayHello("1629117655000")
-  res, err := greeting.SayHello("9999999999999")
+  //res, err := greeting.SayHello("9999999999999")
+  res, err := greeting.SayHello(continuation)
   if err != nil {
     return events.APIGatewayProxyResponse{
       Body:       err.Error(),
@@ -28,6 +42,7 @@ func excuteFunction(request events.APIGatewayProxyRequest) (events.APIGatewayPro
 
   return events.APIGatewayProxyResponse{
     Body:       string(jsonResult),
+    //Body:       continuation + " and " + string(jsonResult),
     StatusCode: 200,
     Headers:    headers,
   }, nil

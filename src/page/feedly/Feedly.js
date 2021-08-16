@@ -9,6 +9,7 @@ function Feedly() {
   const [postsList, setPostsList] = useState([])
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
+  const [continuation, setContinuation] = useState("9999999999999")
 
   // pageが変化した時に実行
   useEffect(() => {
@@ -19,8 +20,9 @@ function Feedly() {
 
   const handleClick = (target: string) => {
     const limit = 40;
-    //const url = 'https://34pb4eo559.execute-api.us-east-1.amazonaws.com/default/test';
-    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly';
+//    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=9999999999999';
+    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=' + continuation;
+//    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=1629077193000';
     setIsLoading(true);
     axios
       .get(url)
@@ -40,7 +42,7 @@ function Feedly() {
       return (
         <li className="item" key={index}>
           <img src={imgsrc} width="50" height="50" loading="lazy" />
-          <a href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a> {moment(date).fromNow()}
+          <a href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a> {moment(date).fromNow()}  {item.published}
         </li>
       );
     });
