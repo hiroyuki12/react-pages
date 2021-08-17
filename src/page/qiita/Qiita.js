@@ -47,13 +47,24 @@ function Qiita() {
     const limit = 40;
     const url = `https://qiita.com/api/v2/tags/react/items?page=${page}&per_page=${limit}`;
     setIsLoading(true);
-    axios
-      .get(url)
-      .then((res) => {
-        setPostsList(postsList.concat(res.data));
-        setIsLoading(false);
+
+    const headers = {}
+    fetch(url, { headers })
+      .then(res =>
+        res.json().then(data => ({
+          ok: res.ok,
+          data,
+        }))
+      )
+      .then(res => {
+        if (!res.ok) {
+          throw Error(res.data.message)
+        } else {
+          console.log(res.data)
+          setPostsList(postsList.concat(res.data));
+          setIsLoading(false);
+        }
       })
-      .catch(console.error);
   }
 
   const renderImageList = (list: string) => {
