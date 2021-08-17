@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
@@ -47,13 +46,23 @@ function StackOverFlow() {
   const handleClick = (target: string) => {
     const url = `https://api.stackexchange.com/2.2/questions?page=${page}&order=desc&sort=activity&tagged=react&site=ja.stackoverflow`;
     setIsLoading(true);
-    axios
-      .get(url)
-      .then((res) => {
-        setPostsList(postsList.concat(res.data.items));
-        setIsLoading(false);
-      })
-      .catch(console.error);
+
+    const headers = {}
+    fetch(url, { headers })
+      .then(res =>
+        res.json().then(data => ({
+          ok: res.ok,
+          data,
+        }))
+      )
+      .then(res => {
+        if (!res.ok) {
+          throw Error(res.data.message)
+        } else {
+          setPostsList(postsList.concat(res.data.items));
+          setIsLoading(false);
+        }
+       })
   }
 
   const renderImageList = (list: string) => {
