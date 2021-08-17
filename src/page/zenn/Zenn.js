@@ -18,13 +18,23 @@ function Zenn() {
   const handleClick = (target: string) => {
     const url = `https://zenn-api.netlify.app/.netlify/functions/trendTech`;
     setIsLoading(true);
-    axios
-      .get(url)
-      .then((res) => {
-        setPostsList(postsList.concat(res.data));
-        setIsLoading(false);
-      })
-      .catch(console.error);
+
+    const headers = {}
+    fetch(url, { headers })
+      .then(res =>
+        res.json().then(data => ({
+          ok: res.ok,
+         data,
+        }))
+      )
+      .then(res => {
+        if (!res.ok) {
+          throw Error(res.data.message)
+        } else {
+          setPostsList(postsList.concat(res.data));
+          setIsLoading(false);
+        }
+       })
   }
 
   const renderImageList = (list: string) => {
