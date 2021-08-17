@@ -36,8 +36,9 @@ function Main() {
           環境構築
         </a>
         <Link to='/react-pages/qiita'>Qiita(API) Function</Link>
+        <br />
         <Link to='/react-pages/feedly'>Feedly(API)</Link>
-        <Link to='/react-pages/zenn'>Zenn(API)</Link>
+        <br />
         <a
           href='https://zenn.dev/topics/react?order=latest' 
           target="_blank"
@@ -45,9 +46,15 @@ function Main() {
         >
           Zenn(React) 外部サイト
         </a>
+        <br />
+        <Link to='/react-pages/zenn'>Zenn(API)</Link>
+        <br />
         <Link to='/react-pages/mstdn'>Mstdn(API)</Link>
+        <br />
         <Link to='/react-pages/stackoverflow'>StackOverFlow(API)</Link>
+        <br />
         <Link to='/react-pages/teratail'>Teratail(API)</Link>
+        <br />
         <a
           href='https://qiita.com/tags/react'
           target="_blank"
@@ -55,6 +62,7 @@ function Main() {
         >
           Qiita(React) 外部サイト
         </a>
+        <br />
         <a
           href='https://d.hatena.ne.jp/keyword/react'
           target="_blank"
@@ -62,6 +70,7 @@ function Main() {
         >
           はてなブログタグ(React) 外部サイト
         </a>
+        <br />
         <Link to='/react-pages/sub'>sub -)</Link>
       </header>
     </div>

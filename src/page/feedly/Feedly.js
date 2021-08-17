@@ -60,7 +60,6 @@ function Feedly() {
         if (!res.ok) {
           throw Error(res.data.message)
         } else {
-          console.log(res.data.items)
           setPostsList(postsList.concat(res.data.items));
           setIsLoading(false);
           setContinuation(res.data.items[99].published);

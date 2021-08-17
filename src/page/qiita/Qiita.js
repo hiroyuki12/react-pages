@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
@@ -60,7 +59,6 @@ function Qiita() {
         if (!res.ok) {
           throw Error(res.data.message)
         } else {
-          console.log(res.data)
           setPostsList(postsList.concat(res.data));
           setIsLoading(false);
         }
