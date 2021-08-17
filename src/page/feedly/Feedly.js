@@ -1,5 +1,4 @@
 import React,{ useState, useEffect } from 'react';
-import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
@@ -48,14 +47,25 @@ function Feedly() {
 //    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=9999999999999';
     const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=' + continuation;
     setIsLoading(true);
-    axios
-      .get(url)
-      .then((res) => {
-        setPostsList(postsList.concat(res.data.items));
-        setIsLoading(false);
-        setContinuation(res.data.items[99].published);
-      })
-      .catch(console.error);
+
+    const headers = {}
+    fetch(url, { headers })
+      .then(res =>
+        res.json().then(data => ({
+          ok: res.ok,
+          data,
+        }))
+      )
+      .then(res => {
+        if (!res.ok) {
+          throw Error(res.data.message)
+        } else {
+          console.log(res.data.items)
+          setPostsList(postsList.concat(res.data.items));
+          setIsLoading(false);
+          setContinuation(res.data.items[99].published);
+        }
+       })
   }
 
   const renderImageList = (list: string) => {
