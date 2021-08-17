@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
@@ -22,13 +21,23 @@ function Mstdn() {
     const url = `https://mstdn.guru/api/v1/accounts/1/statuses?max_id=` + maxId;
     console.log(url);
     setIsLoading(true);
-    axios
-      .get(url)
-      .then((res) => {
-        setPostsList(postsList.concat(res.data));
-        setIsLoading(false);
-      })
-      .catch(console.error);
+
+    const headers = {}
+    fetch(url, { headers })
+      .then(res =>
+        res.json().then(data => ({
+          ok: res.ok,
+          data,
+        }))
+      )
+      .then(res => {
+        if (!res.ok) {
+          throw Error(res.data.message)
+        } else {
+          setPostsList(postsList.concat(res.data));
+          setIsLoading(false);
+        }
+       })
   }
 
   const renderImageList = (list: string) => {
