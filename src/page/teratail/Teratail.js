@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
@@ -47,13 +46,23 @@ function Teratail() {
     const limit = 40;
     const url = `https://teratail.com/api/v1/tags/react.js/questions?page=${page}&limit=${limit}`;
     setIsLoading(true);
-    axios
-      .get(url)
-      .then((res) => {
-        setPostsList(postsList.concat(res.data.questions));
-        setIsLoading(false);
-      })
-      .catch(console.error);
+
+    const headers = {}
+    fetch(url, { headers })
+      .then(res =>
+        res.json().then(data => ({
+          ok: res.ok,
+          data,
+        }))
+      )
+      .then(res => {
+        if (!res.ok) {
+          throw Error(res.data.message)
+        } else {
+          setPostsList(postsList.concat(res.data.questions));
+          setIsLoading(false);
+        }
+       })
   }
 
   const renderImageList = (list: string) => {
