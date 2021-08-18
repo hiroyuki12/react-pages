@@ -9,6 +9,8 @@ function Qiita() {
   const [postsList, setPostsList] = useState([])
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
+  const [tag, setTag] = useState("react")
+  const [error, setError] = useState("")
 
   // 一番下に到達したら handleClickでページを更新
   const handleScroll = lodash.throttle(() => {
@@ -21,8 +23,7 @@ function Qiita() {
 
     // 一番下に到達した時の処理
     //if(message !== "loading...") {
-      setPage((prevCount) => prevCount + 1);  //NG
-      console.log('page count + 1');
+      setPage((prevCount) => prevCount + 1);
     //}
 
   }, 500);
@@ -39,12 +40,11 @@ function Qiita() {
   useEffect(() => {
     //document.title = `page = ${page}, message = ${message}`;
     handleClick();
-    console.log('handleClick (useEffect)');
   }, [page]); // Only re-run the effect if count changes
 
   const handleClick = (target: string) => {
     const limit = 40;
-    const url = `https://qiita.com/api/v2/tags/react/items?page=${page}&per_page=${limit}`;
+    const url = `https://qiita.com/api/v2/tags/${tag}/items?page=${page}&per_page=${limit}`;
     setIsLoading(true);
 
     const headers = {}
@@ -57,7 +57,9 @@ function Qiita() {
       )
       .then(res => {
         if (!res.ok) {
-          throw Error(res.data.message)
+          setError(res.data.message);
+          setIsLoading(false);
+          //throw Error(res.data.message)
         } else {
           setPostsList(postsList.concat(res.data));
           setIsLoading(false);
@@ -80,9 +82,18 @@ function Qiita() {
   return (
     <div>
       <MyNavbar />
+      <font color="red"><b>{error}</b></font>
       <Search search={handleClick} />
+      <br />
+      <button onClick={() => {setTag("react")}}>react</button>
+      <button onClick={() => {setTag("swift")}}>swift</button>
+      <button onClick={() => {setTag("azure")}}>azure</button>
+      <button onClick={() => {setTag("aws")}}>aws</button>
+      <button onClick={() => {setTag(".net")}}>.NET</button>
+      <button onClick={() => {setPostsList([])}}>clear</button> {tag}
       <ul>{renderImageList(postsList)}</ul>
 
+      <br />
       <button onClick={() => {setPage((prevCount) => prevCount + 1)}}>繧ゅ▲縺ｨ隕九ｋ</button>
       {isLoading ? (
         <div>Loading ...</div>
