@@ -11,7 +11,7 @@ function Feedly() {
   const [isLoading, setIsLoading] = useState(false)
   const [continuation, setContinuation] = useState("9999999999999")
 
-  // 一番下に到達したら handleClickでページを更新
+  // 一番下に到達したらpageを更新 -> handleClickが実行される
   const handleScroll = lodash.throttle(() => {
     if (
       window.innerHeight + document.documentElement.scrollTop !==
@@ -86,6 +86,7 @@ function Feedly() {
       <MyNavbar />
       <Search search={handleClick} />
       <ul>{renderImageList(postsList)}</ul>
+
       {isLoading ? (
         <div>Loading ...</div>
       ) : (
