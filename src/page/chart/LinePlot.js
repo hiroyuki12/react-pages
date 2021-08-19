@@ -1,5 +1,5 @@
 import React from 'react'
-import {Line} from 'react-chartjs-2'
+//import {Line} from 'react-chartjs-2'
 
 const data ={
     labels: ["Mon","Tue","Wed","Thu","Fir","Sat","Sun"],
@@ -15,10 +15,10 @@ const data ={
     ]
 }
 
+            //<Line data={data} />
 export const LinePlot: React.FC = () => {
     return (
         <div>
-            <Line data={data} />
         </div>
     )
 }
