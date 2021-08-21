@@ -48,7 +48,7 @@ export function Qiita() {
     handleClick();
   }, [tag]); // Only re-run the effect if count changes
 
-  const tabButtonClick = (target: string) => {
+  const tagButtonClick = (target: string) => {
     setPostsList([]);
     setTag(target);
   }
@@ -96,11 +96,11 @@ export function Qiita() {
       <font color="red"><b>{error}</b></font>
       <Search search={handleClick} />
       <br />
-      <button onClick={() => {tabButtonClick("react")}}>react</button>
-      <button onClick={() => {tabButtonClick("swift")}}>swift</button>
-      <button onClick={() => {tabButtonClick("azure")}}>azure</button>
-      <button onClick={() => {tabButtonClick("aws")}}>aws</button>
-      <button onClick={() => {tabButtonClick(".net")}}>.NET</button>
+      <button onClick={() => {tagButtonClick("react")}}>react</button>
+      <button onClick={() => {tagButtonClick("swift")}}>swift</button>
+      <button onClick={() => {tagButtonClick("azure")}}>azure</button>
+      <button onClick={() => {tagButtonClick("aws")}}>aws</button>
+      <button onClick={() => {tagButtonClick(".net")}}>.NET</button>
       {tag}
       <ul>{renderImageList(postsList)}</ul>
 
