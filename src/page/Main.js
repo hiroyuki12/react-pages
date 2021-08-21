@@ -47,7 +47,7 @@ function Main() {
           Zenn(React) 外部サイト
         </a>
         <br />
-        <Link to='/react-pages/zenn'>Zenn(API)</Link>
+        <Link to='/react-pages/zenn'>Zenn(非公式API)</Link>
         <br />
         <Link to='/react-pages/mstdn'>Mstdn(API)</Link>
         <br />
