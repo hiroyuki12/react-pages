@@ -46,8 +46,7 @@ func SayHello(continuation string, category string, count string) (MyResponse, e
 
   // category hbfav
   //res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&continuation=" + continuation + "&unreadOnly=true&count=100")
-  //res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/" + category + "&continuation=" + continuation + "&unreadOnly=true&count=100")
-  res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/" + category + "&continuation=" + continuation + "&unreadOnly=true&count=" + count)
+  res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/" + category + "&continuation=" + continuation + "&count=" + count)
 
   // category zenn
   //res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/44e0c1a9-30b5-44ab-b7e5-2ba732503822&continuation=" + continuation + "&unreadOnly=true&count=100")

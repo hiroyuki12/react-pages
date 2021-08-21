@@ -12,8 +12,12 @@ function Feedly() {
   const [continuation, setContinuation] = useState("9999999999999")
   const [category, setCategory] = useState("c59b3cef-0fa1-414c-8aca-dc9678aaa85f")  //hbfav
 //  const [category, setCategory] = useState("44e0c1a9-30b5-44ab-b7e5-2ba732503822")  //zenn react
+//  const [category, setCategory] = useState("01328fc1-f342-4bae-b459-d613ff670195")  //zenn swift
+//  const [category, setCategory] = useState("It")
   const [categoryName, setCategoryName] = useState("hbfav")
 //  const [categoryName, setCategoryName] = useState("zenn")  //zenn react
+//  const [categoryName, setCategoryName] = useState("zennSwift")  //zenn swift 
+//  const [categoryName, setCategoryName] = useState("It")
 
   // 一番下に到達したらpageを更新 -> handleClickが実行される
   const handleScroll = lodash.throttle(() => {
@@ -64,6 +68,14 @@ function Feedly() {
       setCategory("44e0c1a9-30b5-44ab-b7e5-2ba732503822");  // zenn react
       setCategoryName("zenn");
     }
+    else if(target == "zennSwift") {
+      setCategory("01328fc1-f342-4bae-b459-d613ff670195");  // zenn swift
+      setCategoryName("zennSwift");
+    }
+    else if(target == "It") {
+      setCategory("It");
+	    setCategoryName("I t");
+    }
   }
   const handleClick = (target: string) => {
     const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=' + continuation + "&category=" + category + "&count=20";
@@ -97,6 +109,12 @@ function Feedly() {
       else if(categoryName == "zenn") {
         imgsrc = "https://storage.googleapis.com/zenn-topics/react.png"  // zenn react
       }
+      else if(categoryName == "zennSwift") {
+        imgsrc = "https://storage.googleapis.com/zenn-topics/swift.png"  // zenn swift 
+      }
+      else if(categoryName == "It") {
+        imgsrc = "https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Feedly-512.png"  // It 
+      }
       const date = new Date(item.published)
       return (
         <li className="item" key={index}>
@@ -114,6 +132,8 @@ function Feedly() {
       <Search search={handleClick} />
       <button onClick={() => {categoryButtonClick("hbfav")}}>hbfav</button>
       <button onClick={() => {categoryButtonClick("zenn")}}>zenn react</button>
+      <button onClick={() => {categoryButtonClick("zennSwift")}}>zenn swift</button>
+      <button onClick={() => {categoryButtonClick("It")}}>I t</button>
       {categoryName}
       <ul>{renderImageList(postsList)}</ul>
 
