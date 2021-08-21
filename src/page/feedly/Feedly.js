@@ -66,7 +66,7 @@ function Feedly() {
     }
   }
   const handleClick = (target: string) => {
-    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=' + continuation + "&category=" + category;
+    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=' + continuation + "&category=" + category + "&count=20";
     setIsLoading(true);
 
     const headers = {}

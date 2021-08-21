@@ -38,7 +38,7 @@ type Alternate struct {
 
 //他のディレクトリ(パッケージ)から呼び出される関数は大文字から始まる必要があります。
 //意外と間違えやすいポイントなので注意しましょう。
-func SayHello(continuation string, category string) (MyResponse, error) {
+func SayHello(continuation string, category string, count string) (MyResponse, error) {
   fmt.Println("Hello Golang!!")
 
   // category IT
@@ -46,7 +46,8 @@ func SayHello(continuation string, category string) (MyResponse, error) {
 
   // category hbfav
   //res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/c59b3cef-0fa1-414c-8aca-dc9678aaa85f&continuation=" + continuation + "&unreadOnly=true&count=100")
-  res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/" + category + "&continuation=" + continuation + "&unreadOnly=true&count=100")
+  //res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/" + category + "&continuation=" + continuation + "&unreadOnly=true&count=100")
+  res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/" + category + "&continuation=" + continuation + "&unreadOnly=true&count=" + count)
 
   // category zenn
   //res := CallFeedlyAPI("https://cloud.feedly.com/v3/streams/contents?streamId=user/41ba84d4-d1f7-4772-88fd-c6c03a024401/category/44e0c1a9-30b5-44ab-b7e5-2ba732503822&continuation=" + continuation + "&unreadOnly=true&count=100")

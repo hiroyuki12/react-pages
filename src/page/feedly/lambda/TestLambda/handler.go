@@ -11,10 +11,13 @@ func excuteFunction(request events.APIGatewayProxyRequest) (events.APIGatewayPro
   var continuationIsNotNull	bool
   var category			string
   var categoryIsNotNull		bool
+  var count			string
+  var countIsNotNull		bool
 
   if len(request.QueryStringParameters) == 0 {
     continuation = "999999999998"
     category	 = "c59b3cef-0fa1-414c-8aca-dc9678aaa85f"  // hbfav
+    count	 = "20"
   } else {
     if continuation, continuationIsNotNull = request.QueryStringParameters["continuation"]; !continuationIsNotNull {
       continuation = "999999999997"
@@ -22,13 +25,16 @@ func excuteFunction(request events.APIGatewayProxyRequest) (events.APIGatewayPro
     if category, categoryIsNotNull = request.QueryStringParameters["category"]; !categoryIsNotNull {
       category = "c59b3cef-0fa1-414c-8aca-dc9678aaa85f"  // hafav
     }
+    if count, countIsNotNull = request.QueryStringParameters["count"]; !countIsNotNull {
+      count = "20"
+    }
   }
 
   //continuation = "9999999999999"
 
   //res, err := greeting.SayHello("1629117655000")
   //res, err := greeting.SayHello("9999999999999")
-  res, err := greeting.SayHello(continuation, category)
+  res, err := greeting.SayHello(continuation, category, count)
   if err != nil {
     return events.APIGatewayProxyResponse{
       Body:       err.Error(),
