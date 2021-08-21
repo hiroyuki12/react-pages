@@ -42,6 +42,17 @@ export function Qiita() {
     handleClick();
   }, [page]); // Only re-run the effect if count changes
 
+  // tag‚ª•Ï‰»‚µ‚½Žž‚ÉŽÀs
+  useEffect(() => {
+    //document.title = `page = ${page}, message = ${message}`;
+    setPostsList([]);
+    handleClick();
+  }, [tag]); // Only re-run the effect if count changes
+
+  const tabButtonClick = (target: string) => {
+    setTag(target);
+  }
+
   const handleClick = (target: string) => {
     const limit = 40;
     const url = `https://qiita.com/api/v2/tags/${tag}/items?page=${page}&per_page=${limit}`;
@@ -85,11 +96,11 @@ export function Qiita() {
       <font color="red"><b>{error}</b></font>
       <Search search={handleClick} />
       <br />
-      <button onClick={() => {setTag("react")}}>react</button>
-      <button onClick={() => {setTag("swift")}}>swift</button>
-      <button onClick={() => {setTag("azure")}}>azure</button>
-      <button onClick={() => {setTag("aws")}}>aws</button>
-      <button onClick={() => {setTag(".net")}}>.NET</button>
+      <button onClick={() => {tabButtonClick("react")}}>react</button>
+      <button onClick={() => {tabButtonClick("swift")}}>swift</button>
+      <button onClick={() => {tabButtonClick("azure")}}>azure</button>
+      <button onClick={() => {tabButtonClick("aws")}}>aws</button>
+      <button onClick={() => {tabButtonClick(".net")}}>.NET</button>
       <button onClick={() => {setPostsList([])}}>clear</button> {tag}
       <ul>{renderImageList(postsList)}</ul>
 
