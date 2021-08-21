@@ -45,11 +45,11 @@ export function Qiita() {
   // tag‚ª•Ï‰»‚µ‚½‚ÉÀs
   useEffect(() => {
     //document.title = `page = ${page}, message = ${message}`;
-    setPostsList([]);
     handleClick();
   }, [tag]); // Only re-run the effect if count changes
 
   const tabButtonClick = (target: string) => {
+    setPostsList([]);
     setTag(target);
   }
 
