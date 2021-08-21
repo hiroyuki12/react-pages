@@ -10,6 +10,10 @@ function Feedly() {
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
   const [continuation, setContinuation] = useState("9999999999999")
+  const [category, setCategory] = useState("c59b3cef-0fa1-414c-8aca-dc9678aaa85f")  //hbfav
+//  const [category, setCategory] = useState("44e0c1a9-30b5-44ab-b7e5-2ba732503822")  //zenn react
+  const [categoryName, setCategoryName] = useState("hbfav")
+//  const [categoryName, setCategoryName] = useState("zenn")  //zenn react
 
   // 一番下に到達したらpageを更新 -> handleClickが実行される
   const handleScroll = lodash.throttle(() => {
@@ -43,9 +47,26 @@ function Feedly() {
     console.log('handleClick (useEffect)');
   }, [page]); // Only re-run the effect if count changes
 
+  // categoryが変化した時に実行
+  useEffect(() => {
+    //document.title = `page = ${page}, message = ${message}`;
+    handleClick();
+  }, [category]); // Only re-run the effect if count changes
+
+  const categoryButtonClick = (target: string) => {
+    setPostsList([]);
+    setContinuation("9999999999999");
+    if(target == "hbfav") {
+      setCategory("c59b3cef-0fa1-414c-8aca-dc9678aaa85f");
+      setCategoryName("hbfav");
+    }
+    else if(target == "zenn") {
+      setCategory("44e0c1a9-30b5-44ab-b7e5-2ba732503822");  // zenn react
+      setCategoryName("zenn");
+    }
+  }
   const handleClick = (target: string) => {
-//    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=9999999999999';
-    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=' + continuation;
+    const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=' + continuation + "&category=" + category;
     setIsLoading(true);
 
     const headers = {}
@@ -62,14 +83,20 @@ function Feedly() {
         } else {
           setPostsList(postsList.concat(res.data.items));
           setIsLoading(false);
-          setContinuation(res.data.items[99].published);
+          setContinuation(res.data.items[res.data.items.length - 1].published);
         }
        })
   }
 
   const renderImageList = (list: string) => {
     const posts = list.map((item, index) => {
-      const imgsrc = "https://cdn.profile-image.st-hatena.com/users/" + item.author + "/profile.gif"
+      var imgsrc = ""
+      if(categoryName == "hbfav") {
+        imgsrc = "https://cdn.profile-image.st-hatena.com/users/" + item.author + "/profile.gif"
+      }
+      else if(categoryName == "zenn") {
+        imgsrc = "https://storage.googleapis.com/zenn-topics/react.png"  // zenn react
+      }
       const date = new Date(item.published)
       return (
         <li className="item" key={index}>
@@ -85,6 +112,9 @@ function Feedly() {
     <div>
       <MyNavbar />
       <Search search={handleClick} />
+      <button onClick={() => {categoryButtonClick("hbfav")}}>hbfav</button>
+      <button onClick={() => {categoryButtonClick("zenn")}}>zenn react</button>
+      {categoryName}
       <ul>{renderImageList(postsList)}</ul>
 
       {isLoading ? (
