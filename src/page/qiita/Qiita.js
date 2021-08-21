@@ -101,7 +101,7 @@ export function Qiita() {
       <button onClick={() => {tabButtonClick("azure")}}>azure</button>
       <button onClick={() => {tabButtonClick("aws")}}>aws</button>
       <button onClick={() => {tabButtonClick(".net")}}>.NET</button>
-      <button onClick={() => {setPostsList([])}}>clear</button> {tag}
+      {tag}
       <ul>{renderImageList(postsList)}</ul>
 
       <br />
