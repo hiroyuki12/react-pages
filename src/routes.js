@@ -5,7 +5,7 @@ import One from './page/One';
 import DogImage from './page/dogimage/DogImage';
 import Todomatic from './page/todomatic/Todomatic';
 import QiitaClass from './page/qiita/QiitaClass';
-import Qiita from './page/qiita/Qiita';
+import { Qiita } from './page/qiita/Qiita';
 import QiitaSwift from './page/qiita/QiitaSwift';
 import Zenn from './page/zenn/Zenn';
 import ZennBooksTrend from './page/zenn/ZennBooksTrend';

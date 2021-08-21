@@ -5,7 +5,7 @@ import Footer from "../../components/Footer";
 import lodash from 'lodash';
 import moment from 'moment';
 
-function Qiita() {
+export function Qiita() {
   const [postsList, setPostsList] = useState([])
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
@@ -80,7 +80,7 @@ function Qiita() {
   }
 
   return (
-    <div>
+    <>
       <MyNavbar />
       <font color="red"><b>{error}</b></font>
       <Search search={handleClick} />
@@ -96,13 +96,13 @@ function Qiita() {
       <br />
       <button onClick={() => {setPage((prevCount) => prevCount + 1)}}>もっと見る</button>
       {isLoading ? (
-        <div>Loading ...</div>
+        <>Loading ...</>
       ) : (
-        <div>Not Loading</div>
+        <>Not Loading</>
       )}
       <Footer />
-    </div>
+    </>
   );
 }
 
-export default Qiita;
+//export default Qiita;
