@@ -12,10 +12,6 @@ class Search extends React.Component {
         <a href="https://swiftintroduction.hatenablog.com/entry/2020/10/12/223935" target="_blank" rel="noreferrer">Stack OverflowのAPIでswiftの質問を表示</a><br />
         <a href="https://qiita.com/kei_1011/items/cdc12086347025719152" target="_blank" rel="noreferrer"></a>
         <h2>StackOverFlowでreactタグありの記事を表示</h2>
-        <a href="qiitaswift"></a>
-        <form onSubmit={this.handleSubmit}>
-          <input className="siimple-btn siimple-btn--teal" type="submit" value="Search" />
-        </form>
       </div>
     );
   }
