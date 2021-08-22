@@ -73,7 +73,7 @@ function Teratail() {
         return (
           <li className="item" key={index}>
             <img className="css-100alwu eyfquo10" src={profileImage2} width="40" height="40" loading="lazy" />
-            <a href={item.id} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created).fromNow()} 回答数:{item.count_reply} PV数:{item.count_pv}
+            <a className="QiitaApp-link" href={item.id} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created).fromNow()} 回答数:{item.count_reply} PV数:{item.count_pv}
           </li>
         );
       }
@@ -82,7 +82,7 @@ function Teratail() {
         return (
           <li className="item" key={index}>
             <img className="css-100alwu eyfquo10" src={item.user.photo} width="40" height="40" loading="lazy" />
-            <a href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created).fromNow()} 回答数:{item.count_reply} PV数:{item.count_pv}
+            <a className="QiitaApp-link" href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created).fromNow()} 回答数:{item.count_reply} PV数:{item.count_pv}
           </li>
         );
       }
@@ -93,13 +93,15 @@ function Teratail() {
   return (
     <div>
       <MyNavbar />
-      <Search search={handleClick} />
-      <ul>{renderImageList(postsList)}</ul>
-      {isLoading ? (
-        <div>Loading ...</div>
-      ) : (
-        <div>Not Loading</div>
-      )}
+      <header className="QiitaApp-header">
+        <Search search={handleClick} />
+        <ul>{renderImageList(postsList)}</ul>
+        {isLoading ? (
+          <div>Loading ...</div>
+        ) : (
+          <div>Not Loading</div>
+        )}
+      </header>
       <Footer />
     </div>
   );
