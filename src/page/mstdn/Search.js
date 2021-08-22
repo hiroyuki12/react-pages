@@ -11,10 +11,6 @@ class Search extends React.Component {
       <div>
         <a href="https://mbp.hatenablog.com/entry/2021/07/30/225748" target="_blank" rel="noreferrer">mstdn.guruのトゥートを表示</a><br />
         <h2>mstdn.guruでdrikinのトゥートを表示</h2>
-        <a href="qiitaswift"></a>
-        <form onSubmit={this.handleSubmit}>
-          <input className="siimple-btn siimple-btn--teal" type="submit" value="Search" />
-        </form>
       </div>
     );
   }

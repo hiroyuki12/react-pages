@@ -75,7 +75,7 @@ function Mstdn() {
         return (
           <li className="item" key={index}>
             <img className="css-100alwu eyfquo10" src={item.reblog.account.avatar} width="40" height="40" loading="lazy" />
-            <a href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created_at).fromNow()} リプライ数:{item.replies_count} fav数:{item.favourites_count}
+            <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created_at).fromNow()} リプライ数:{item.replies_count} fav数:{item.favourites_count}
           </li>
         );
       }
@@ -83,7 +83,7 @@ function Mstdn() {
         return (
           <li className="item" key={index}>
             <img className="css-100alwu eyfquo10" src={item.account.avatar} width="40" height="40" loading="lazy" />
-            <a href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created_at).fromNow()} リプライ数:{item.replies_count} fav数:{item.favourites_count}
+            <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created_at).fromNow()} リプライ数:{item.replies_count} fav数:{item.favourites_count}
           </li>
         );
       }
@@ -94,14 +94,16 @@ function Mstdn() {
   return (
     <div>
       <MyNavbar />
-      <Search search={handleClick} />
-      <ul>{renderImageList(postsList)}</ul>
+      <header className="QiitaApp-header">
+        <Search search={handleClick} />
+        <ul>{renderImageList(postsList)}</ul>
 
-      {isLoading ? (
-        <div>Loading ...</div>
-      ) : (
-        <div>Not Loading</div>
-      )}
+        {isLoading ? (
+          <div>Loading ...</div>
+        ) : (
+          <div>Not Loading</div>
+        )}
+      </header>
       <Footer />
     </div>
   );
