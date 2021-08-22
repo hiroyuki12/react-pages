@@ -13,10 +13,6 @@ class Search extends React.Component {
         <a href="https://glasses-dog.hateblo.jp/search?q=feedly+Cloud" target="_blank" rel="noreferrer">feedly Cloud APIでカスタムRSSリーダーを作る - Glasses Dogの雑記</a><br />
         <a href="https://mbp.hatenablog.com/entry/2021/08/14/104812" target="_blank" rel="noreferrer">Feedly APIはCORSを許可していない</a>
         <h2>Feedlyのhbfav記事を表示</h2>
-        <a href="qiitaswift"></a>
-        <form onSubmit={this.handleSubmit}>
-          <input className="siimple-btn siimple-btn--teal" type="submit" value="Search" />
-        </form>
       </div>
     );
   }

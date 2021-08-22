@@ -15,7 +15,7 @@ function Feedly() {
 //  const [category, setCategory] = useState("01328fc1-f342-4bae-b459-d613ff670195")  //zenn swift
 //  const [category, setCategory] = useState("It")
   const [categoryName, setCategoryName] = useState("hbfav")
-//  const [categoryName, setCategoryName] = useState("zenn")  //zenn react
+//  const [categoryName, setCategoryName] = useState("zennReact")  //zenn react
 //  const [categoryName, setCategoryName] = useState("zennSwift")  //zenn swift 
 //  const [categoryName, setCategoryName] = useState("It")
 
@@ -64,9 +64,9 @@ function Feedly() {
       setCategory("c59b3cef-0fa1-414c-8aca-dc9678aaa85f");
       setCategoryName("hbfav");
     }
-    else if(target == "zenn") {
+    else if(target == "zennReact") {
       setCategory("44e0c1a9-30b5-44ab-b7e5-2ba732503822");  // zenn react
-      setCategoryName("zenn");
+      setCategoryName("zennReact");
     }
     else if(target == "zennSwift") {
       setCategory("01328fc1-f342-4bae-b459-d613ff670195");  // zenn swift
@@ -74,7 +74,7 @@ function Feedly() {
     }
     else if(target == "It") {
       setCategory("It");
-	    setCategoryName("I t");
+      setCategoryName("I t");
     }
   }
   const handleClick = (target: string) => {
@@ -106,20 +106,20 @@ function Feedly() {
       if(categoryName == "hbfav") {
         imgsrc = "https://cdn.profile-image.st-hatena.com/users/" + item.author + "/profile.gif"
       }
-      else if(categoryName == "zenn") {
+      else if(categoryName == "zennReact") {
         imgsrc = "https://storage.googleapis.com/zenn-topics/react.png"  // zenn react
       }
       else if(categoryName == "zennSwift") {
         imgsrc = "https://storage.googleapis.com/zenn-topics/swift.png"  // zenn swift 
       }
-      else if(categoryName == "It") {
+      else if(categoryName == "I t") {
         imgsrc = "https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Feedly-512.png"  // It 
       }
       const date = new Date(item.published)
       return (
         <li className="item" key={index}>
           <img src={imgsrc} width="50" height="50" loading="lazy" />
-          <a href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a> {moment(date).fromNow()}
+          <a className="QiitaApp-link" href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a> {moment(date).fromNow()}
         </li>
       );
     });
@@ -129,19 +129,21 @@ function Feedly() {
   return (
     <div>
       <MyNavbar />
-      <Search search={handleClick} />
-      <button onClick={() => {categoryButtonClick("hbfav")}}>hbfav</button>
-      <button onClick={() => {categoryButtonClick("zenn")}}>zenn react</button>
-      <button onClick={() => {categoryButtonClick("zennSwift")}}>zenn swift</button>
-      <button onClick={() => {categoryButtonClick("It")}}>I t</button>
-      {categoryName}
-      <ul>{renderImageList(postsList)}</ul>
+      <header className="QiitaApp-header">
+        <Search search={handleClick} />
+        <button onClick={() => {categoryButtonClick("hbfav")}}>hbfav</button>
+        <button onClick={() => {categoryButtonClick("zennReact")}}>zenn react</button>
+        <button onClick={() => {categoryButtonClick("zennSwift")}}>zenn swift</button>
+        <button onClick={() => {categoryButtonClick("It")}}>I t</button>
+        {categoryName}
+        <ul>{renderImageList(postsList)}</ul>
 
-      {isLoading ? (
-        <div>Loading ...</div>
-      ) : (
-        <div>Not Loading</div>
-      )}
+        {isLoading ? (
+          <div>Loading ...page: {page}/20posts/{20*(page-1)+1}-</div>
+        ) : (
+          <div>Not Loading. page: {page}/20posts/{20*(page-1)+1}-</div>
+        )}
+      </header>
       <Footer />
     </div>
   );
