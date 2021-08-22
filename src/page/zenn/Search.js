@@ -13,9 +13,6 @@ class Search extends React.Component {
         <a href="https://mbp.hatenablog.com/entry/2021/08/07/144120" target="_blank" rel="noreferrer">非公式ZennトレンドAPIを使って表示</a>
         <h2>ZennのTechトレンドの記事を表示</h2>
         <a href="zennbookstrend">Booksトレンド</a>
-        <form onSubmit={this.handleSubmit}>
-          <input className="siimple-btn siimple-btn--teal" type="submit" value="Search" />
-        </form>
       </div>
     );
   }

@@ -43,7 +43,7 @@ function Zenn() {
       return (
         <li className="item" key={index}>
           <img src={item.user.avatarSmallUrl} width="50" height="50" loading="lazy" />
-          <a href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.publishedAt).fromNow()}  {item.likedCount} liked
+          <a className="QiitaApp-link" href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.publishedAt).fromNow()}  {item.likedCount} liked
         </li>
       );
     });
@@ -53,13 +53,15 @@ function Zenn() {
   return (
     <div>
       <MyNavbar />
-      <Search search={handleClick} />
-      <ul>{renderImageList(postsList)}</ul>
-      {isLoading ? (
-        <div>Loading ...</div>
-      ) : (
-        <div>Not Loading</div>
-      )}
+      <header className="QiitaApp-header">
+        <Search search={handleClick} />
+        <ul>{renderImageList(postsList)}</ul>
+        {isLoading ? (
+          <div>Loading ...</div>
+        ) : (
+          <div>Not Loading</div>
+        )}
+      </header>
       <Footer />
     </div>
   );
