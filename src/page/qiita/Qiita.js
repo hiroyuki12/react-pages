@@ -83,7 +83,7 @@ export function Qiita() {
       return (
         <li className="item" key={index}>
           <img src={item.user.profile_image_url} width="50" height="50" loading="lazy" />
-          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created_at).fromNow()}
+          <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created_at).fromNow()}
         </li>
       );
     });
@@ -93,24 +93,25 @@ export function Qiita() {
   return (
     <>
       <MyNavbar />
-      <font color="red"><b>{error}</b></font>
-      <Search search={handleClick} />
-      <br />
-      <button onClick={() => {tagButtonClick("react")}}>react</button>
-      <button onClick={() => {tagButtonClick("swift")}}>swift</button>
-      <button onClick={() => {tagButtonClick("azure")}}>azure</button>
-      <button onClick={() => {tagButtonClick("aws")}}>aws</button>
-      <button onClick={() => {tagButtonClick(".net")}}>.NET</button>
-      {tag}
-      <ul>{renderImageList(postsList)}</ul>
+      <header className="QiitaApp-header">
+        <font color="red"><b>{error}</b></font>
+        <Search search={handleClick} />
+        <br />
+        <button onClick={() => {tagButtonClick("react")}}>react</button>
+        <button onClick={() => {tagButtonClick("swift")}}>swift</button>
+        <button onClick={() => {tagButtonClick("azure")}}>azure</button>
+        <button onClick={() => {tagButtonClick("aws")}}>aws</button>
+        <button onClick={() => {tagButtonClick(".net")}}>.NET</button>
+        {tag}
+        <ul>{renderImageList(postsList)}</ul>
 
-      <br />
-      <button onClick={() => {setPage((prevCount) => prevCount + 1)}}>もっと見る</button>
-      {isLoading ? (
-        <>Loading ...</>
-      ) : (
-        <>Not Loading</>
-      )}
+        <br />
+        {isLoading ? (
+          <>Loading .... page: {page}/20posts/{20*(page-1)+1}-</>
+        ) : (
+   	<>Not Loading. page: {page}/20posts/{20*(page-1)+1}-</> 
+        )}
+      </header>
       <Footer />
     </>
   );
