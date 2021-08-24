@@ -89,9 +89,9 @@ function StackOverFlow() {
         <ul>{renderImageList(postsList)}</ul>
 
         {isLoading ? (
-          <div>Loading ...</div>
+          <div>Loading ... page: {page}/20posts/{20*(page-1)+1}-</div>
         ) : (
-          <div>Not Loading</div>
+          <div>Not Loading page: {page}/20posts/{20*(page-1)+1}-</div>
         )}
       </header>
       <Footer />
