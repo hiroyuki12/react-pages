@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
-import './style.css';
+//import './style.css';
 import Timeline   from "./components/Timeline";
 import TweetInput from "./components/TweetInput";
 
