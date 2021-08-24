@@ -1,18 +1,18 @@
-import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
 import routes from './routes';
 import './App.css';
 import './QiitaApp.css';
 
 import PrivateRoute from "./page/firebase/auth/PrivateRoute";
 import { AuthProvider } from "./page/firebase/auth/AuthProvider";
-import Home from "./page/firebase/components/Home";
-import Index from "./page/firestore/Index";
-import Add from "./page/firestore/Add";
+import Home 	    from "./page/firebase/components/Home";
+import Index 	    from "./page/firestore/Index";
+import Add 	    from "./page/firestore/Add";
 
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <BrowserRouter>
          <Switch>
            <PrivateRoute exact path="/react-pages/home" component={Home} />
            <PrivateRoute exact path="/react-pages/index" component={Index} />
@@ -26,7 +26,7 @@ function App() {
                 />
              ))}
           </Switch>
-      </Router>
+      </BrowserRouter>
     </AuthProvider>
   );
 }
