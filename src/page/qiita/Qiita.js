@@ -4,6 +4,12 @@ import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import lodash from 'lodash';
 import moment from 'moment';
+import stringWidth from "string-width"
+import styled from "styled-components"
+
+const Container = styled.div`
+  width: 100%;
+`
 
 export function Qiita() {
   const [postsList, setPostsList] = useState([])
@@ -82,8 +88,10 @@ export function Qiita() {
     const posts = list.map((item, index) => {
       return (
         <li className="item" key={index}>
+          <Container>
           <img src={item.user.profile_image_url} width="50" height="50" loading="lazy" />
           <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created_at).fromNow()}
+          </Container>
         </li>
       );
     });
