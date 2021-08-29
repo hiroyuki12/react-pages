@@ -57,7 +57,7 @@ function Feedly() {
     handleClick();
   }, [category]); // Only re-run the effect if count changes
 
-  const categoryButtonClick = (target: string) => {
+  const categoryButtonClick = (target) => {
     setPostsList([]);
     setContinuation("9999999999999");
     if(target == "hbfav") {
@@ -77,7 +77,7 @@ function Feedly() {
       setCategoryName("I t");
     }
   }
-  const handleClick = (target: string) => {
+  const handleClick = () => {
     const url = 'https://u2r6yb4u30.execute-api.us-east-1.amazonaws.com/default/feedly?continuation=' + continuation + "&category=" + category + "&count=20";
     setIsLoading(true);
 
@@ -91,7 +91,8 @@ function Feedly() {
       )
       .then(res => {
         if (!res.ok) {
-          throw Error(res.data.message)
+          throw Error(res.data.message);
+
         } else {
           setPostsList(postsList.concat(res.data.items));
           setIsLoading(false);
@@ -100,7 +101,7 @@ function Feedly() {
        })
   }
 
-  const renderImageList = (list: string) => {
+  const renderImageList = (list) => {
     const posts = list.map((item, index) => {
       var imgsrc = ""
       if(categoryName == "hbfav") {
