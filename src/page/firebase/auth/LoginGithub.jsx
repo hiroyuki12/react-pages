@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 import { withRouter } from "react-router";
 import { AuthContext } from "./AuthProvider";
 import MyNavbar from "../../../components/MyNavbar";
