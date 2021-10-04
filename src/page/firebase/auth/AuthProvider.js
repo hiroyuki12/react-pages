@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import app from "../components/base.js";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+const auth = getAuth();
 
 // contextの作成
 export const AuthContext = React.createContext();
@@ -28,7 +31,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    app.auth().onAuthStateChanged(setCurrentUser);
+    //app.auth().onAuthStateChanged(setCurrentUser);
+
+    //onAuthStateChanged(auth, user => { console.log(user); });
+    onAuthStateChanged(auth, setCurrentUser);
   }, []);
 
   return (
