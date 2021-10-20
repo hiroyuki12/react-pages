@@ -107,6 +107,7 @@ export function Qiita() {
         <br />
         <button onClick={() => {tagButtonClick("react")}}>react</button>
         <button onClick={() => {tagButtonClick("swift")}}>swift</button>
+        <button onClick={() => {tagButtonClick("vim")}}>vim</button>
         <button onClick={() => {tagButtonClick("azure")}}>azure</button>
         <button onClick={() => {tagButtonClick("aws")}}>aws</button>
         <button onClick={() => {tagButtonClick(".net")}}>.NET</button>
