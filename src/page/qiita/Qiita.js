@@ -111,6 +111,7 @@ export function Qiita() {
         <button onClick={() => {tagButtonClick("azure")}}>azure</button>
         <button onClick={() => {tagButtonClick("aws")}}>aws</button>
         <button onClick={() => {tagButtonClick(".net")}}>.NET</button>
+        <button onClick={() => {tagButtonClick("flutter")}}>Flutter</button>
         {tag}
         <ul>{renderImageList(postsList)}</ul>
 
