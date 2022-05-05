@@ -37,6 +37,8 @@ function Main() {
         </a>
         <Link to='/react-pages/qiita'>Qiita(API) Function</Link>
         <br />
+        <Link to='/react-pages/youtubeapp'>Youtube</Link>
+        <br />
         <Link to='/react-pages/feedly'>Feedly(API)</Link>
         <br />
         <a
