@@ -1,6 +1,5 @@
 import React from 'react'
 import Api from './Api'
-import Gura from './Gura'
 
 function YoutubeApp() {
   console.log('Hello');
@@ -55,7 +54,7 @@ function YoutubeApp() {
     /><br />
     <br />
 
-    But please feel free to call me Gura or SAME or shark..<br />
+    But please feel free to call me Gura or SAME or shark.<br />
     でも、気軽にぐら、サメ、シャークって呼んで<br />
     <iframe
       id="player"
@@ -67,7 +66,7 @@ function YoutubeApp() {
     /><br />
     <br />
     
-    Ok,so my birthday,well you see.<br />
+    Ok,so my birthday, well you see.<br />
     オッケー、私の誕生日、えっとね、<br />
     <iframe
       id="player"
@@ -79,7 +78,7 @@ function YoutubeApp() {
     /><br />
     <br />
 
-    I've been around quite a bit.and don't exactry remember my birthday.<br />
+    I've been around quite a bit. and don't exactry remember my birthday.<br />
     長く生きてきたから、正確な誕生日は覚えてないんだよね。<br />
     <iframe
       id="player"
@@ -164,25 +163,25 @@ function YoutubeApp() {
     /><br />
     <br />
 
-    My birthday is uh, not my birthday. It is in fact the day of a popular shark movie.<br />
-    私の誕生日に決めたけど私の誕生日じゃないんだ。実は某サメ映画の公開日だよ<br />
+    My birthday is uh, not my birthday. <br />
+    私の誕生日に決めたけど私の誕生日じゃないんだ。<br />
     <iframe
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=1123"}
+      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=112"}
       frameBorder="0"
       allowFullScreen
     /><br />
     <br />
 
     it isn't back the day of  a popular shark movie,shark movie.<br />
-    某サメ映画の公開日　私が生まれた頃にはなかったけどね<br />
+    某サメ映画の公開日だよ　私が生まれた頃にはなかったけどね<br />
     <iframe
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=115"}
+      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=114"}
       frameBorder="0"
       allowFullScreen
     /><br />
