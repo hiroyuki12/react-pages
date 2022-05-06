@@ -29,6 +29,8 @@ import LoginSpotify from './page/spotify/LoginSpotify';
 import SpotifyApp from './page/spotify/SpotifyApp';
 import ChartApp from './page/chart/ChartApp';
 import YoutubeApp from './page/youtube/YoutubeApp';
+import GuraYoutube from './page/youtube/GuraYoutube';
+import CaliYoutube from './page/youtube/CaliYoutube';
 import RadioButton from './page/radioButton/RadioButton';
 
 const routes = [
@@ -64,6 +66,8 @@ const routes = [
     { path: '/react-pages/spotifyapp', component: SpotifyApp},
     { path: '/react-pages/chart', component: ChartApp},
     { path: '/react-pages/youtubeapp', component: YoutubeApp},
+    { path: '/react-pages/gurayoutube', component: GuraYoutube},
+    { path: '/react-pages/caliyoutube', component: CaliYoutube},
     { path: '/react-pages/radioButton', component: RadioButton},
   ];
   
