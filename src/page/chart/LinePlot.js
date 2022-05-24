@@ -1,6 +1,6 @@
 import React from 'react'
 //import {Line} from 'react-chartjs-2'
-
+/*
 const data ={
     labels: ["Mon","Tue","Wed","Thu","Fir","Sat","Sun"],
     datasets: [
@@ -14,7 +14,7 @@ const data ={
         }
     ]
 }
-
+*/
             //<Line data={data} />
 export const LinePlot: React.FC = () => {
     return (

@@ -32,7 +32,7 @@ class ZennBooksTrend extends React.Component {
       const url = 'https://zenn.dev/' + item.user.username + '/books/' + item.slug;
       return (
         <li className="item" key={index}>
-          <img src={item.user.avatarSmallUrl} width="50" height="50" loading="lazy" />
+          <img src={item.user.avatarSmallUrl} width="50" height="50" loading="lazy" alt="img" />
           <a href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.publishedAt).fromNow()}  {item.likedCount} liked
         </li>
       );

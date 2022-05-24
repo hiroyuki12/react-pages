@@ -40,6 +40,7 @@ function Teratail() {
     //document.title = `page = ${page}, message = ${message}`;
     handleClick();
     console.log('handleClick (useEffect)');
+    // eslint-disable-next-line
   }, [page]); // Only re-run the effect if count changes
 
   const handleClick = (target: string) => {
@@ -72,7 +73,7 @@ function Teratail() {
         const profileImage2 = 'https://teratail-v2.storage.googleapis.com/uploads/avatars/u8/86365/UYo8ovxu_thumbnail.jpg'
         return (
           <li className="item" key={index}>
-            <img className="css-100alwu eyfquo10" src={profileImage2} width="40" height="40" loading="lazy" />
+            <img className="css-100alwu eyfquo10" src={profileImage2} width="40" height="40" loading="lazy" alt="img" />
             <a className="QiitaApp-link" href={item.id} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created).fromNow()} 回答数:{item.count_reply} PV数:{item.count_pv}
           </li>
         );
@@ -81,7 +82,7 @@ function Teratail() {
         const url = "https://teratail.com/questions/" + item.id
         return (
           <li className="item" key={index}>
-            <img className="css-100alwu eyfquo10" src={item.user.photo} width="40" height="40" loading="lazy" />
+            <img className="css-100alwu eyfquo10" src={item.user.photo} width="40" height="40" loading="lazy" alt="img"/>
             <a className="QiitaApp-link" href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created).fromNow()} 回答数:{item.count_reply} PV数:{item.count_pv}
           </li>
         );

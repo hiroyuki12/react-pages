@@ -37,6 +37,7 @@ const Api = () => {
 
   return (
     <iframe
+      title="player"
       id="player"
       width="640"
       height="360"

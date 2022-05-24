@@ -4,7 +4,7 @@ import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import lodash from 'lodash';
 import moment from 'moment';
-import stringWidth from "string-width"
+//import stringWidth from "string-width"
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -46,12 +46,14 @@ export function Qiita() {
   useEffect(() => {
     //document.title = `page = ${page}, message = ${message}`;
     handleClick();
+    // eslint-disable-next-line
   }, [page]); // Only re-run the effect if count changes
 
   // tag‚ª•Ï‰»‚µ‚½Žž‚ÉŽÀs
   useEffect(() => {
     //document.title = `page = ${page}, message = ${message}`;
     handleClick();
+    // eslint-disable-next-line
   }, [tag]); // Only re-run the effect if count changes
 
   const tagButtonClick = (target: string) => {
@@ -89,7 +91,7 @@ export function Qiita() {
       return (
         <li className="item" key={index}>
           <Container>
-          <img src={item.user.profile_image_url} width="50" height="50" loading="lazy" />
+          <img src={item.user.profile_image_url} width="50" height="50" loading="lazy" alt="img" />
           <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created_at).fromNow()}
           </Container>
         </li>

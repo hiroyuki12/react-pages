@@ -41,10 +41,11 @@ function Mstdn() {
     //document.title = `page = ${page}, message = ${message}`;
     handleClick();
     console.log('handleClick (useEffect)');
+    // eslint-disable-next-line
   }, [page]); // Only re-run the effect if count changes
 
   const handleClick = (target: string) => {
-    const limit = 40;
+    // const limit = 40;
     const url = `https://mstdn.guru/api/v1/accounts/1/statuses?max_id=` + maxId;
     setIsLoading(true);
 
@@ -74,7 +75,7 @@ function Mstdn() {
       if(reblog != null) {
         return (
           <li className="item" key={index}>
-            <img className="css-100alwu eyfquo10" src={item.reblog.account.avatar} width="40" height="40" loading="lazy" />
+            <img className="css-100alwu eyfquo10" src={item.reblog.account.avatar} width="40" height="40" loading="lazy" alt="img"/>
             <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created_at).fromNow()} リプライ数:{item.replies_count} fav数:{item.favourites_count}
           </li>
         );
@@ -82,7 +83,7 @@ function Mstdn() {
       else {
         return (
           <li className="item" key={index}>
-            <img className="css-100alwu eyfquo10" src={item.account.avatar} width="40" height="40" loading="lazy" />
+            <img className="css-100alwu eyfquo10" src={item.account.avatar} width="40" height="40" loading="lazy" alt="img"/>
             <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created_at).fromNow()} リプライ数:{item.replies_count} fav数:{item.favourites_count}
           </li>
         );

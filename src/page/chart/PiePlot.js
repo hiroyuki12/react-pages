@@ -1,6 +1,6 @@
 import React from 'react'
 //import {Pie, Doughnut } from 'react-chartjs-2'
-
+/*
 const data = {
     labels: ['Windows', 'Mac', 'Linux'],
     datasets: [
@@ -12,7 +12,7 @@ const data = {
         }
     ]
 } 
-
+*/
             //<Pie data={data} />
             //<Doughnut data={data} />
 export const PiePlot: React.FC = () => {

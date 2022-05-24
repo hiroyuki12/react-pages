@@ -1,5 +1,4 @@
 import React from 'react'
-import Api from './Api'
 import { Link } from 'react-router-dom';
 
 function GuraYoutube() {
@@ -13,11 +12,12 @@ function GuraYoutube() {
     それじゃ、始めよっか？<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=6" target="001">再生</a><br />
     <iframe
+      title="001"
       name="001"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=6"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=6"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -27,11 +27,12 @@ function GuraYoutube() {
     えー、いらっしゃい！いらっしゃい！ようこそ私の配信へ！<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=19" target="002">再生</a><br />
     <iframe
+      title="002"
       name="002"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=19"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=19"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -41,11 +42,12 @@ function GuraYoutube() {
     私の名前？もう知ってるよね？下の名前で呼ぶよね<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=28" target="103">再生</a><br />
     <iframe
+      title="103"
       name="103"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=28"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=28"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -55,11 +57,12 @@ function GuraYoutube() {
     私の名前はがうる ぐら。<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=35" target="003">再生</a><br />
     <iframe
+      title="003"
       name="003"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=35"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=35"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -69,11 +72,12 @@ function GuraYoutube() {
     でも、気軽にぐら、サメ、シャークって呼んで<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=48" target="004">再生</a><br />
     <iframe
+      title="004"
       name="004"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=48"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=48"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -83,11 +87,12 @@ function GuraYoutube() {
     オッケー、私の誕生日、えっとね、<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=61" target="005">再生</a><br />
     <iframe
+      title="005"
       name="005"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=61"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=61"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -97,11 +102,12 @@ function GuraYoutube() {
     長く生きてきたから、正確な誕生日は覚えてないんだよね。<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=68" target="006">再生</a><br />
     <iframe
+      title="006"
       name="006"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=68"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=68"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -112,11 +118,12 @@ function GuraYoutube() {
     でも、いつにするか決めないと...<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=73" target="007">再生</a><br />
     <iframe
+      title="007"
       name="007"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=73"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=73"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -126,11 +133,12 @@ function GuraYoutube() {
     英語ってどうやって喋るんだっけ？<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=84" target="008">再生</a><br />
     <iframe
+      title="008"
       name="008"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=84"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=84"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -140,11 +148,12 @@ function GuraYoutube() {
     オッケー、決めたよ、私の誕生日<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=87" target="009">再生</a><br />
     <iframe
+      title="009"
       name="009"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=87"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=87"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -154,11 +163,12 @@ function GuraYoutube() {
     6月20日。うぉ〜<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=92" target="010">再生</a><br />
     <iframe
+      title="010"
       name="010"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=92"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=92"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -168,11 +178,12 @@ function GuraYoutube() {
     この日を選ばなきゃ良かったぁ〜<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=102" target="011">再生</a><br />
     <iframe
+      title="011"
       name="011"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=102"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=102"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -182,11 +193,12 @@ function GuraYoutube() {
     私が緊張してるの文字でバレちゃう。<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=105" target="012">再生</a><br />
     <iframe
+      title="012"
       name="012"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=105"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=105"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -196,11 +208,12 @@ function GuraYoutube() {
     私の誕生日に決めたけど私の誕生日じゃないんだ。<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=112" target="013">再生</a><br />
     <iframe
+      title="013"
       name="013"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=112"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=112"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -210,11 +223,12 @@ function GuraYoutube() {
     某サメ映画の公開日だよ　私が生まれた頃にはなかったけどね<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=114" target="014">再生</a><br />
     <iframe
+      title="014"
       name="014"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=114"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=114"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -224,11 +238,12 @@ function GuraYoutube() {
     皆きっと　こいつが誰だか気になってるでしょ。<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=127" target="015">再生</a><br />
     <iframe
+      title="015"
       name="015"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=127"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=127"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -238,11 +253,12 @@ function GuraYoutube() {
     誰だろう？<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=131" target="016">再生</a><br />
     <iframe
+      title="016"
       name="016"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=131"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=131"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -252,11 +268,12 @@ function GuraYoutube() {
     彼はね、古くからの友達のブループ。<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=138" target="017">再生</a><br />
     <iframe
+      title="017"
       name="017"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=138"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=138"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -266,11 +283,12 @@ function GuraYoutube() {
     スペルはB・L・O・O・P。<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=142" target="018">再生</a><br />
     <iframe
+      title="018"
       name="018"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=142"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=142"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -280,11 +298,12 @@ function GuraYoutube() {
     何で泡の中にいるか？<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=150" target="019">再生</a><br />
     <iframe
+      title="019"
       name="019"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=150"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=150"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -294,11 +313,12 @@ function GuraYoutube() {
     彼は泡の中にいた方が皆の身のためだよ<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=153" target="020">再生</a><br />
     <iframe
+      title="020"
       name="020"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=153"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=153"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -308,11 +328,12 @@ function GuraYoutube() {
     彼とは長い付き合いだからね　よく知ってるの<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=159" target="021">再生</a><br />
     <iframe
+      title="021"
       name="021"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=159"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=159"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -322,11 +343,12 @@ function GuraYoutube() {
     頭の上のここ見えるかな？<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=164" target="022">再生</a><br />
     <iframe
+      title="022"
       name="022"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=164"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=164"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -336,11 +358,12 @@ function GuraYoutube() {
     そう　そう<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=168" target="023">再生</a><br />
     <iframe
+      title="023"
       name="023"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=168"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=168"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -350,11 +373,12 @@ function GuraYoutube() {
     非常食の缶詰！<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=173" target="024">再生</a><br />
     <iframe
+      title="024"
       name="024"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=173"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=173"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -364,11 +388,12 @@ function GuraYoutube() {
     今、彼は泡で何も聞こえないけど<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=176" target="025">再生</a><br />
     <iframe
+      title="025"
       name="025"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=176"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=176"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -378,11 +403,12 @@ function GuraYoutube() {
     いざという時は、<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=178" target="026">再生</a><br />
     <iframe
+      title="026"
       name="026"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=178"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=178"}
       frameBorder="0"
       allowFullScreen
     /><br />
@@ -392,11 +418,12 @@ function GuraYoutube() {
     彼は非常食を被っているから...<br />
     <a href="https://www.youtube.com/embed/7JbzG593dgk?autoplay=1&start=182" target="027">再生</a><br />
     <iframe
+      title="027"
       name="027"
       id="player"
       width="640"
       height="360"
-      src={"https://www.youtube.com/embed/" + "7JbzG593dgk?start=182"}
+      src={"https://www.youtube.com/embed/7JbzG593dgk?start=182"}
       frameBorder="0"
       allowFullScreen
     /><br />

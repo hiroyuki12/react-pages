@@ -41,6 +41,7 @@ function StackOverFlow() {
     //document.title = `page = ${page}, message = ${message}`;
     handleClick();
     console.log('handleClick (useEffect)');
+    // eslint-disable-next-line
   }, [page]); // Only re-run the effect if count changes
 
   const handleClick = (target: string) => {
@@ -72,7 +73,7 @@ function StackOverFlow() {
       
       return (
         <li className="item" key={index}>
-          <img class="css-100alwu eyfquo10" src={item.owner.profile_image} width="40" height="40" loading="lazy" />
+          <img class="css-100alwu eyfquo10" src={item.owner.profile_image} width="40" height="40" loading="lazy" alt="img"/>
           <a className="QiitaApp-link" href={item.link} target="_blank" rel="noreferrer">{item.title}</a> {moment(dateTime2).fromNow()} , 
 回答数:{item.answer_count} ,PV数:{item.view_count}
         </li>

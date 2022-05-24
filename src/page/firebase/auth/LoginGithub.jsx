@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import firebase from "firebase/compat/app";
 import { withRouter } from "react-router";
-import { AuthContext } from "./AuthProvider";
+//import { AuthContext } from "./AuthProvider";
 import MyNavbar from "../../../components/MyNavbar";
 
 const LoginGithub = ({ history }) => {
@@ -16,15 +16,15 @@ const LoginGithub = ({ history }) => {
     }
   });
 
-  const provider = new firebase.auth.GithubAuthProvider();
-  const result = firebase.auth().signInWithPopup(provider);
+//  const provider = new firebase.auth.GithubAuthProvider();
+//  const result = firebase.auth().signInWithPopup(provider);
 
 
   // AuthContextからlogin関数を受け取る
-  const handleSubmit = event => {
+/*  const handleSubmit = event => {
     event.preventDefault();
     const { email, password } = event.target.elements;
-  };
+  };*/
 
   return (
     <div>

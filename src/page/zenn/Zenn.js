@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
@@ -42,7 +41,7 @@ function Zenn() {
       const url = 'https://zenn.dev/' + item.user.username + '/articles/' + item.slug;
       return (
         <li className="item" key={index}>
-          <img src={item.user.avatarSmallUrl} width="50" height="50" loading="lazy" />
+          <img src={item.user.avatarSmallUrl} width="50" height="50" loading="lazy" alt="img" />
           <a className="QiitaApp-link" href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.publishedAt).fromNow()}  {item.likedCount} liked
         </li>
       );

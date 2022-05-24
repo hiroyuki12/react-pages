@@ -48,31 +48,33 @@ function Feedly() {
   useEffect(() => {
     //document.title = `page = ${page}, message = ${message}`;
     handleClick();
-    console.log('handleClick (useEffect)');
+    //console.log('handleClick (useEffect)');
+    // eslint-disable-next-line
   }, [page]); // Only re-run the effect if count changes
 
   // categoryが変化した時に実行
   useEffect(() => {
     //document.title = `page = ${page}, message = ${message}`;
     handleClick();
+    // eslint-disable-next-line
   }, [category]); // Only re-run the effect if count changes
 
   const categoryButtonClick = (target) => {
     setPostsList([]);
     setContinuation("9999999999999");
-    if(target == "hbfav") {
+    if(target === "hbfav") {
       setCategory("c59b3cef-0fa1-414c-8aca-dc9678aaa85f");
       setCategoryName("hbfav");
     }
-    else if(target == "zennReact") {
+    else if(target === "zennReact") {
       setCategory("44e0c1a9-30b5-44ab-b7e5-2ba732503822");  // zenn react
       setCategoryName("zennReact");
     }
-    else if(target == "zennSwift") {
+    else if(target === "zennSwift") {
       setCategory("01328fc1-f342-4bae-b459-d613ff670195");  // zenn swift
       setCategoryName("zennSwift");
     }
-    else if(target == "It") {
+    else if(target === "It") {
       setCategory("It");
       setCategoryName("I t");
     }
@@ -104,22 +106,22 @@ function Feedly() {
   const renderImageList = (list) => {
     const posts = list.map((item, index) => {
       var imgsrc = ""
-      if(categoryName == "hbfav") {
+      if(categoryName === "hbfav") {
         imgsrc = "https://cdn.profile-image.st-hatena.com/users/" + item.author + "/profile.gif"
       }
-      else if(categoryName == "zennReact") {
+      else if(categoryName === "zennReact") {
         imgsrc = "https://storage.googleapis.com/zenn-topics/react.png"  // zenn react
       }
-      else if(categoryName == "zennSwift") {
+      else if(categoryName === "zennSwift") {
         imgsrc = "https://storage.googleapis.com/zenn-topics/swift.png"  // zenn swift 
       }
-      else if(categoryName == "I t") {
+      else if(categoryName === "I t") {
         imgsrc = "https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Feedly-512.png"  // It 
       }
       const date = new Date(item.published)
       return (
         <li className="item" key={index}>
-          <img src={imgsrc} width="50" height="50" loading="lazy" />
+          <img src={imgsrc} width="50" height="50" loading="lazy" alt="img"/>
           <a className="QiitaApp-link" href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a> {moment(date).fromNow()}
         </li>
       );

@@ -56,7 +56,7 @@ class QiitaClass extends React.Component {
     const posts = list.map((item, index) => {
       return (
         <li className="item" key={index}>
-          <img src={item.user.profile_image_url} width="50" height="50" loading="lazy" />
+          <img src={item.user.profile_image_url} width="50" height="50" loading="lazy" alt="img"/>
           <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created_at).fromNow()}
         </li>
       );
