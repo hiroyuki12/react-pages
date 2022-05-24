@@ -37,10 +37,6 @@ function Main() {
         </a>
         <Link to='/react-pages/qiita'>Qiita(API) Function</Link>
         <br />
-        <Link to='/react-pages/gurayoutube'>Youtube ホロライブenで英語の勉強 Gawr Gura</Link>
-        <br />
-        <Link to='/react-pages/caliyoutube'>Youtube ホロライブen Calliope</Link>
-        <br />
         <Link to='/react-pages/feedly'>Feedly(API)</Link>
         <br />
         <a
