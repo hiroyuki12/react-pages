@@ -107,11 +107,11 @@ export function Qiita() {
         <font color="red"><b>{error}</b></font>
         <Search search={handleClick} />
         <br />
-        <button onClick={() => {tagButtonClick("react")}}>react</button>
-        <button onClick={() => {tagButtonClick("swift")}}>swift</button>
-        <button onClick={() => {tagButtonClick("vim")}}>vim</button>
-        <button onClick={() => {tagButtonClick("azure")}}>azure</button>
-        <button onClick={() => {tagButtonClick("aws")}}>aws</button>
+        <button onClick={() => {tagButtonClick("react")}}>React</button>
+        <button onClick={() => {tagButtonClick("swift")}}>Swift</button>
+        <button onClick={() => {tagButtonClick("vim")}}>Vim</button>
+        <button onClick={() => {tagButtonClick("azure")}}>Azure</button>
+        <button onClick={() => {tagButtonClick("aws")}}>AWS</button>
         <button onClick={() => {tagButtonClick(".net")}}>.NET</button>
         <button onClick={() => {tagButtonClick("flutter")}}>Flutter</button>
         {tag}
