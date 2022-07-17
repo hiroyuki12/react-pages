@@ -108,6 +108,9 @@ export function Qiita() {
         <Search search={handleClick} />
         <br />
         <button onClick={() => {tagButtonClick("react")}}>React</button>
+        <button onClick={() => {tagButtonClick("next.js")}}>Next.js</button>
+        <button onClick={() => {tagButtonClick("vue.js")}}>Vue.js</button>
+        <button onClick={() => {tagButtonClick("nuxt")}}>Nuxt.js</button>
         <button onClick={() => {tagButtonClick("swift")}}>Swift</button>
         <button onClick={() => {tagButtonClick("vim")}}>Vim</button>
         <button onClick={() => {tagButtonClick("azure")}}>Azure</button>
