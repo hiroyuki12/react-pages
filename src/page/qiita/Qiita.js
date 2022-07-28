@@ -86,6 +86,15 @@ export function Qiita() {
       })
   }
 
+  const renderTag = (list) => {
+    const tags = list.map((item, index) => {
+      return (
+        <>{item.name}, </>
+      );
+    });
+    return tags;
+  }
+
   const renderImageList = (list: string) => {
     const posts = list.map((item, index) => {
       return (
@@ -96,7 +105,7 @@ export function Qiita() {
               <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a>
               <div class="card-text2">
               <p>{moment(item.created_at).fromNow()}
-                 / {item.tags[0].name} / {item.likes_count}likes / {item.user.items_count}posts</p>
+                 / {renderTag(item.tags)} / {item.likes_count}likes / {item.user.items_count}posts</p>
               </div>
             </div>
           </div>
