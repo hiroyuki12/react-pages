@@ -15,7 +15,7 @@ export function Qiita() {
   const [postsList, setPostsList] = useState([])
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
-  const [tag, setTag] = useState("react")
+  const [tag, setTag] = useState("React")
   const [error, setError] = useState("")
 
   // 一番下に到達したら handleClickでページを更新
@@ -129,16 +129,16 @@ export function Qiita() {
         <font color="red"><b>{error}</b></font>
         <Search search={handleClick} />
         <br />
-        <button onClick={() => {tagButtonClick("react")}}>React</button>
-        <button onClick={() => {tagButtonClick("next.js")}}>Next.js</button>
-        <button onClick={() => {tagButtonClick("vue.js")}}>Vue.js</button>
-        <button onClick={() => {tagButtonClick("nuxt")}}>Nuxt.js</button>
-        <button onClick={() => {tagButtonClick("swift")}}>Swift</button>
-        <button onClick={() => {tagButtonClick("vim")}}>Vim</button>
-        <button onClick={() => {tagButtonClick("azure")}}>Azure</button>
-        <button onClick={() => {tagButtonClick("aws")}}>AWS</button>
-        <button onClick={() => {tagButtonClick(".net")}}>.NET</button>
-        <button onClick={() => {tagButtonClick("flutter")}}>Flutter</button>
+        <button onClick={() => {tagButtonClick("React")}}>React</button>
+        <button onClick={() => {tagButtonClick("Next.js")}}>Next.js</button>
+        <button onClick={() => {tagButtonClick("Vue.js")}}>Vue.js</button>
+        <button onClick={() => {tagButtonClick("Nuxt")}}>Nuxt.js</button>
+        <button onClick={() => {tagButtonClick("Swift")}}>Swift</button>
+        <button onClick={() => {tagButtonClick("Vim")}}>Vim</button>
+        <button onClick={() => {tagButtonClick("Azure")}}>Azure</button>
+        <button onClick={() => {tagButtonClick("Aws")}}>AWS</button>
+        <button onClick={() => {tagButtonClick(".NET")}}>.NET</button>
+        <button onClick={() => {tagButtonClick("Flutter")}}>Flutter</button>
         {tag}<br />
         page:<button onClick={() => {pageButtonClick("1")}}>__1__</button>
         ___:<button onClick={() => {pageButtonClick("10")}}>__10__</button>
@@ -153,6 +153,7 @@ export function Qiita() {
    	<>Not Loading. page: {page}/20posts/{20*(page-1)+1}-</> 
         )}
       </header>
+      <div className="QiitaApp-footer">{tag} Page {page}/20posts/{20*(page-1)+1}-</div>
       <Footer />
     </>
   );
