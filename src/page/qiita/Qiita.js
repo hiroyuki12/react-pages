@@ -141,8 +141,8 @@ export function Qiita() {
         <button onClick={() => {tagButtonClick("Flutter")}}>Flutter</button>
         {tag}<br />
         page:<button onClick={() => {pageButtonClick("1")}}>__1__</button>
-        ___:<button onClick={() => {pageButtonClick("10")}}>__10__</button>
         ___:<button onClick={() => {pageButtonClick("50")}}>__50__</button>
+        ___:<button onClick={() => {pageButtonClick("100")}}>__100__</button>
         {page}
         <ul>{renderImageList(postsList)}</ul>
 
