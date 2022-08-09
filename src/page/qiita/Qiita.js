@@ -3,9 +3,11 @@ import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import lodash from 'lodash';
-import moment from 'moment';
 //import stringWidth from "string-width"
 import styled from "styled-components"
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 const Container = styled.div`
   width: 100%;
@@ -111,7 +113,7 @@ export function Qiita() {
             <div class="card-text">
               <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a>
               <div class="card-text2">
-              <p>{moment(item.created_at).fromNow(true)}
+              <p>{dayjs(item.created_at).fromNow(true)}
                  / {renderTag(item.tags)} / {item.likes_count}likes / {item.user.items_count}posts</p>
               </div>
             </div>

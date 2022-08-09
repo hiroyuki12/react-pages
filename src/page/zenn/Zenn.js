@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
-import moment from 'moment'
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 function Zenn() {
   const [postsList, setPostsList] = useState([])
@@ -42,7 +44,7 @@ function Zenn() {
       return (
         <li className="item" key={index}>
           <img src={item.user.avatarSmallUrl} width="50" height="50" loading="lazy" alt="img" />
-          <a className="QiitaApp-link" href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.publishedAt).fromNow()}  {item.likedCount} liked
+          <a className="QiitaApp-link" href={url} target="_blank" rel="noreferrer">{item.title}</a> {dayjs(item.publishedAt).fromNow(true)}  {item.likedCount} liked
         </li>
       );
     });

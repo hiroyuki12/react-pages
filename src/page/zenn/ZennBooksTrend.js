@@ -3,7 +3,9 @@ import axios from "axios";
 import SearchBooksTrend from "./SearchBooksTrend";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
-import moment from 'moment'
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 class ZennBooksTrend extends React.Component {
 
@@ -33,7 +35,7 @@ class ZennBooksTrend extends React.Component {
       return (
         <li className="item" key={index}>
           <img src={item.user.avatarSmallUrl} width="50" height="50" loading="lazy" alt="img" />
-          <a href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.publishedAt).fromNow()}  {item.likedCount} liked
+          <a href={url} target="_blank" rel="noreferrer">{item.title}</a> {dayjs(item.publishedAt).fromNow(true)}  {item.likedCount} liked
         </li>
       );
     });

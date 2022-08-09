@@ -3,7 +3,9 @@ import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import lodash from 'lodash';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 function Feedly() {
   const [postsList, setPostsList] = useState([])
@@ -122,7 +124,7 @@ function Feedly() {
       return (
         <li className="item" key={index}>
           <img src={imgsrc} width="50" height="50" loading="lazy" alt="img"/>
-          <a className="QiitaApp-link" href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a> {moment(date).fromNow()}
+          <a className="QiitaApp-link" href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a> {dayjs(date).fromNow(true)}
         </li>
       );
     });

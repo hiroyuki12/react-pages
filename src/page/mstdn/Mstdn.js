@@ -3,7 +3,9 @@ import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import lodash from 'lodash';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 function Mstdn() {
   const [postsList, setPostsList] = useState([])
@@ -76,7 +78,7 @@ function Mstdn() {
         return (
           <li className="item" key={index}>
             <img className="css-100alwu eyfquo10" src={item.reblog.account.avatar} width="40" height="40" loading="lazy" alt="img"/>
-            <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created_at).fromNow()} リプライ数:{item.replies_count} fav数:{item.favourites_count}
+            <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a> {dayjs(item.created_at).fromNow(true)} リプライ数:{item.replies_count} fav数:{item.favourites_count}
           </li>
         );
       }
@@ -84,7 +86,7 @@ function Mstdn() {
         return (
           <li className="item" key={index}>
             <img className="css-100alwu eyfquo10" src={item.account.avatar} width="40" height="40" loading="lazy" alt="img"/>
-            <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a> {moment(item.created_at).fromNow()} リプライ数:{item.replies_count} fav数:{item.favourites_count}
+            <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a> {dayjs(item.created_at).fromNow(true)} リプライ数:{item.replies_count} fav数:{item.favourites_count}
           </li>
         );
       }

@@ -3,7 +3,9 @@ import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import lodash from 'lodash';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 function Teratail() {
   const [postsList, setPostsList] = useState([])
@@ -74,7 +76,7 @@ function Teratail() {
         return (
           <li className="item" key={index}>
             <img className="css-100alwu eyfquo10" src={profileImage2} width="40" height="40" loading="lazy" alt="img" />
-            <a className="QiitaApp-link" href={item.id} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created).fromNow()} 回答数:{item.count_reply} PV数:{item.count_pv}
+            <a className="QiitaApp-link" href={item.id} target="_blank" rel="noreferrer">{item.title}</a> {dayjs(item.created).fromNow(true)} 回答数:{item.count_reply} PV数:{item.count_pv}
           </li>
         );
       }
@@ -83,7 +85,7 @@ function Teratail() {
         return (
           <li className="item" key={index}>
             <img className="css-100alwu eyfquo10" src={item.user.photo} width="40" height="40" loading="lazy" alt="img"/>
-            <a className="QiitaApp-link" href={url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created).fromNow()} 回答数:{item.count_reply} PV数:{item.count_pv}
+            <a className="QiitaApp-link" href={url} target="_blank" rel="noreferrer">{item.title}</a> {dayjs(item.created).fromNow(true)} 回答数:{item.count_reply} PV数:{item.count_pv}
           </li>
         );
       }

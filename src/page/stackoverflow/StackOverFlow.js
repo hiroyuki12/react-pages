@@ -3,7 +3,9 @@ import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
 import lodash from 'lodash';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 function StackOverFlow() {
   const [postsList, setPostsList] = useState([])
@@ -74,7 +76,7 @@ function StackOverFlow() {
       return (
         <li className="item" key={index}>
           <img class="css-100alwu eyfquo10" src={item.owner.profile_image} width="40" height="40" loading="lazy" alt="img"/>
-          <a className="QiitaApp-link" href={item.link} target="_blank" rel="noreferrer">{item.title}</a> {moment(dateTime2).fromNow()} , 
+          <a className="QiitaApp-link" href={item.link} target="_blank" rel="noreferrer">{item.title}</a> {dayjs(dateTime2).fromNow(true)} , 
 回答数:{item.answer_count} ,PV数:{item.view_count}
         </li>
       );

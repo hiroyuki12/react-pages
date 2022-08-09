@@ -3,7 +3,9 @@ import axios from "axios";
 import Search from "./Search";
 import MyNavbar from "../../components/MyNavbar";
 import Footer from "../../components/Footer";
-import moment from 'moment'
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 class QiitaClass extends React.Component {
   constructor(props) {
@@ -57,7 +59,7 @@ class QiitaClass extends React.Component {
       return (
         <li className="item" key={index}>
           <img src={item.user.profile_image_url} width="50" height="50" loading="lazy" alt="img"/>
-          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {moment(item.created_at).fromNow()}
+          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a> {dayjs(item.created_at).fromNow(true)}
         </li>
       );
     });
@@ -67,12 +69,10 @@ class QiitaClass extends React.Component {
   render() {
     return (
       <div>
-        <MyNavbar />
         <Search search={this.handleClick} />
         <ul>{this.renderImageList(this.state.postsList)}</ul>
 
         <button onClick={this.handleClick}>もっと見る</button>
-        <Footer />
       </div>
     );
   }
