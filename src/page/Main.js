@@ -2,18 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../logo.svg';
 import '../App.css';
-import { Navbar, Nav } from 'react-bootstrap';
 
 function Main() {
   return (
     <div className="App">
-      <Navbar bg="dark" variant="dark">
-        <Nav className="mr-auto">
-          <Nav.Link href="/react-pages/">Home</Nav.Link>
-          <Nav.Link href='/react-pages/qiita'>Qiita</Nav.Link>
-          <Nav.Link href='/react-pages/blog'>Blog</Nav.Link>
-        </Nav>
-      </Navbar >
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

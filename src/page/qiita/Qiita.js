@@ -69,7 +69,7 @@ export function Qiita() {
   }
 
   const handleClick = (target: string) => {
-    const limit = 40;
+    const limit = 20;
     const url = `https://qiita.com/api/v2/tags/${tag}/items?page=${page}&per_page=${limit}`;
     setIsLoading(true);
 
@@ -124,7 +124,6 @@ export function Qiita() {
 
   return (
     <>
-      <MyNavbar />
       <header className="QiitaApp-header">
         <font color="red"><b>{error}</b></font>
         <Search search={handleClick} />
