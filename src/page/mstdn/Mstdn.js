@@ -77,16 +77,31 @@ function Mstdn() {
       if(reblog != null) {
         return (
           <li className="item" key={index}>
-            <img className="css-100alwu eyfquo10" src={item.reblog.account.avatar} width="40" height="40" loading="lazy" alt="img"/>
-            <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a> {dayjs(item.created_at).fromNow(true)} リプライ数:{item.replies_count} fav数:{item.favourites_count}
+            <div class="card-container">
+              <img className="css-100alwu eyfquo10" src={item.reblog.account.avatar} width="40" height="40" loading="lazy" alt="img"/>
+              <div class="card-text">
+                <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a>
+
+                <div class="card-text2">
+                  <p>{dayjs(item.created_at).fromNow(true)} リプライ数:{item.replies_count} fav数:{item.favourites_count}</p>
+                </div>
+              </div>
+            </div>
           </li>
         );
       }
       else {
         return (
           <li className="item" key={index}>
-            <img className="css-100alwu eyfquo10" src={item.account.avatar} width="40" height="40" loading="lazy" alt="img"/>
-            <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a> {dayjs(item.created_at).fromNow(true)} リプライ数:{item.replies_count} fav数:{item.favourites_count}
+            <div class="card-container">
+              <img className="css-100alwu eyfquo10" src={item.account.avatar} width="40" height="40" loading="lazy" alt="img"/>
+              <div class="card-text">
+                <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a>
+                <div class="card-text2">
+                  <p>{dayjs(item.created_at).fromNow(true)} リプライ数:{item.replies_count} fav数:{item.favourites_count}</p>
+                </div>
+              </div>
+            </div>
           </li>
         );
       }
