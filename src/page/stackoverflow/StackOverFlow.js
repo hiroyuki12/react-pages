@@ -75,9 +75,18 @@ function StackOverFlow() {
       
       return (
         <li className="item" key={index}>
-          <img class="css-100alwu eyfquo10" src={item.owner.profile_image} width="40" height="40" loading="lazy" alt="img"/>
-          <a className="QiitaApp-link" href={item.link} target="_blank" rel="noreferrer">{item.title}</a> {dayjs(dateTime2).fromNow(true)} , 
+          <div class="card-container">
+            <img class="css-100alwu eyfquo10" src={item.owner.profile_image} width="50" height="50" loading="lazy" alt="img"/>
+
+            <div class="card-text">
+              <a className="QiitaApp-link" href={item.link} target="_blank" rel="noreferrer">{item.title}</a>
+              <div class="card-text2">
+                <p>{dayjs(dateTime2).fromNow(true)} ,
 回答数:{item.answer_count} ,PV数:{item.view_count}
+                </p>
+              </div>
+            </div>
+          </div>
         </li>
       );
     });
