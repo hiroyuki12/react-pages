@@ -149,6 +149,7 @@ function Feedly() {
           <div>Not Loading. page: {page}/20posts/{20*(page-1)+1}-</div>
         )}
       </header>
+      <div className="QiitaApp-footer">{categoryName} Page {page}/50posts</div>
       <Footer />
     </div>
   );
