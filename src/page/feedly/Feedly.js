@@ -123,8 +123,16 @@ function Feedly() {
       const date = new Date(item.published)
       return (
         <li className="item" key={index}>
-          <img src={imgsrc} width="50" height="50" loading="lazy" alt="img"/>
-          <a className="QiitaApp-link" href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a> {dayjs(date).fromNow(true)}
+          <div class="card-container">
+            <img src={imgsrc} width="50" height="50" loading="lazy" alt="img"/>
+
+            <div class="card-text">
+              <a className="QiitaApp-link" href={item.alternate[0].href} target="_blank" rel="noreferrer">{item.title}</a>
+              <div class="card-text2">
+                <p>{dayjs(date).fromNow(true)}</p>
+              </div>
+            </div>
+          </div>
         </li>
       );
     });
