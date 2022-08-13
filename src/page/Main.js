@@ -31,7 +31,7 @@ function Main() {
         <br />
         <Link to='/react-pages/GuraYoutube'>Gura Youtube</Link>
         <br />
-        <Link to='/react-pages/feedly'>Feedly(API)</Link>
+        <Link to='/react-pages/feedly'>Feedly(API)(Lambda us-east1 TOKEN)</Link>
         <br />
         <a
           href='https://zenn.dev/topics/react?order=latest' 
