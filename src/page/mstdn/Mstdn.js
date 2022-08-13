@@ -78,7 +78,7 @@ function Mstdn() {
         return (
           <li className="item" key={index}>
             <div class="card-container">
-              <img className="css-100alwu eyfquo10" src={item.reblog.account.avatar} width="40" height="40" loading="lazy" alt="img"/>
+              <img className="css-100alwu eyfquo10" src={item.reblog.account.avatar} width="50" height="50" loading="lazy" alt="img"/>
               <div class="card-text">
                 <a className="QiitaApp-link" href={item.url} target="_blank" rel="noreferrer">{title}</a>
 
