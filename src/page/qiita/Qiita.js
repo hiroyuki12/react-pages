@@ -59,6 +59,13 @@ export function Qiita() {
     // eslint-disable-next-line
   }, [tag]); // Only re-run the effect if count changes
 
+  // perPage‚ª•Ï‰»‚µ‚½Žž‚ÉŽÀs
+  useEffect(() => {
+    //document.title = `page = ${page}, message = ${message}`;
+    handleClick();
+    // eslint-disable-next-line
+  }, [perPage]); // Only re-run the effect if count changes
+
   const tagButtonClick = (target: string) => {
     setPerPage(20);
     setPostsList([]);
