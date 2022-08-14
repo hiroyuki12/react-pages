@@ -60,6 +60,7 @@ export function Qiita() {
   }, [tag]); // Only re-run the effect if count changes
 
   const tagButtonClick = (target: string) => {
+    setPerPage(20);
     setPostsList([]);
     setTag(target);
   }
