@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Search from "./Search";
-import MyNavbar from "../../components/MyNavbar";
-import Footer from "../../components/Footer";
 import lodash from 'lodash';
 //import stringWidth from "string-width"
-import styled from "styled-components"
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
-
-const Container = styled.div`
-  width: 100%;
-`
 
 export function Qiita() {
   const [postsList, setPostsList] = useState([])
@@ -47,21 +40,18 @@ export function Qiita() {
 
   // page‚ª•Ï‰»‚µ‚½Žž‚ÉŽÀs
   useEffect(() => {
-    //document.title = `page = ${page}, message = ${message}`;
     handleClick();
     // eslint-disable-next-line
   }, [page]); // Only re-run the effect if count changes
 
   // tag‚ª•Ï‰»‚µ‚½Žž‚ÉŽÀs
   useEffect(() => {
-    //document.title = `page = ${page}, message = ${message}`;
     handleClick();
     // eslint-disable-next-line
   }, [tag]); // Only re-run the effect if count changes
 
   // perPage‚ª•Ï‰»‚µ‚½Žž‚ÉŽÀs
   useEffect(() => {
-    //document.title = `page = ${page}, message = ${message}`;
     handleClick();
     // eslint-disable-next-line
   }, [perPage]); // Only re-run the effect if count changes
@@ -77,7 +67,6 @@ export function Qiita() {
     setPostsList([]);
     const tmp = parseInt(target,10);
     setPage(tmp);
-    //setTag('Swift');
   }
 
   const handleClick = (target: string) => {
@@ -166,7 +155,6 @@ export function Qiita() {
         )}
       </header>
       <div className="QiitaApp-footer">{tag} Page {page}/{perPage}posts/{perPage*(page-1)+1}-</div>
-      <Footer />
     </>
   );
 }
