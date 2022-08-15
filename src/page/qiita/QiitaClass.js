@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from "axios";
 import Search from "./Search";
-import MyNavbar from "../../components/MyNavbar";
-import Footer from "../../components/Footer";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
