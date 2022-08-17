@@ -44,6 +44,7 @@
 .card-text2{
   font-size: 11px;
   margin: 4px;
+  height: 14px;
 
   overflow: hidden;
   display: -webkit-box;
