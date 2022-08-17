@@ -59,6 +59,7 @@ export function Qiita() {
   const tagButtonClick = (target: string) => {
     setPerPage(20);
     setPostsList([]);
+    setPage(1);
     setTag(target);
   }
 
