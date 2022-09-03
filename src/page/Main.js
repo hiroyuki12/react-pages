@@ -29,9 +29,15 @@ function Main() {
         </a>
         <Link to='/react-pages/qiita'>Qiita(API) Function</Link>
         <br />
-        <Link to='/react-pages/GuraYoutube'>Gura Youtube</Link>
-        <br />
         <Link to='/react-pages/feedly'>Feedly(API)(Lambda us-east1 TOKEN)</Link>
+        <br />
+        <a
+          href='https://zenn.dev/topics/stablediffusion?order=latest' 
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Zenn(Stable Diffusion) 外部サイト
+        </a>
         <br />
         <a
           href='https://zenn.dev/topics/react?order=latest' 
@@ -40,6 +46,8 @@ function Main() {
         >
           Zenn(React) 外部サイト
         </a>
+        <br />
+        <Link to='/react-pages/GuraYoutube'>Gura Youtube</Link>
         <br />
         <Link to='/react-pages/zenn'>Zenn(非公式API)</Link>
         <br />
