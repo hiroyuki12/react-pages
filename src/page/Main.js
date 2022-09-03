@@ -58,6 +58,14 @@ function Main() {
         <Link to='/react-pages/teratail'>Teratail(API)</Link>
         <br />
         <a
+          href='https://qiita.com/tags/stablediffusion'
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Qiita(StableDiffusion) 外部サイト
+        </a>
+        <br />
+        <a
           href='https://qiita.com/tags/react'
           target="_blank"
           rel="noopener noreferrer"
