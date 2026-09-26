@@ -14,7 +14,7 @@ export function Qiita() {
   const [tag, setTag] = useState("React")
   const [error, setError] = useState("")
 
-  // ˆê”Ô‰º‚É“’B‚µ‚½‚ç handleClick‚Åƒy[ƒW‚ğXV
+  // ä¸€ç•ªä¸‹ã«åˆ°é”ã—ãŸã‚‰ handleClickã§ãƒšãƒ¼ã‚¸ã‚’æ›´æ–°
   const handleScroll = lodash.throttle(() => {
     if (
       window.innerHeight + document.documentElement.scrollTop !==
@@ -23,7 +23,7 @@ export function Qiita() {
       return;
     }
 
-    // ˆê”Ô‰º‚É“’B‚µ‚½‚Ìˆ—
+    // ä¸€ç•ªä¸‹ã«åˆ°é”ã—ãŸæ™‚ã®å‡¦ç†
     //if(message !== "loading...") {
       setPage((prevCount) => prevCount + 1);
     //}
@@ -38,25 +38,25 @@ export function Qiita() {
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // page‚ª•Ï‰»‚µ‚½‚ÉÀs
+  // pageãŒå¤‰åŒ–ã—ãŸæ™‚ã«å®Ÿè¡Œ
   useEffect(() => {
     handleClick();
     // eslint-disable-next-line
   }, [page]); // Only re-run the effect if count changes
 
-  // tag‚ª•Ï‰»‚µ‚½‚ÉÀs
+  // tagãŒå¤‰åŒ–ã—ãŸæ™‚ã«å®Ÿè¡Œ
   useEffect(() => {
     handleClick();
     // eslint-disable-next-line
   }, [tag]); // Only re-run the effect if count changes
 
-  // perPage‚ª•Ï‰»‚µ‚½‚ÉÀs
+  // perPageãŒå¤‰åŒ–ã—ãŸæ™‚ã«å®Ÿè¡Œ
   useEffect(() => {
     handleClick();
     // eslint-disable-next-line
   }, [perPage]); // Only re-run the effect if count changes
 
-  const tagButtonClick = (target: string) => {
+  const tagButtonClick = (target) => {
     setPerPage(20);
     setPostsList([]);
     setPage(1);
@@ -70,7 +70,7 @@ export function Qiita() {
     setPage(tmp);
   }
 
-  const handleClick = (target: string) => {
+  const handleClick = (target) => {
     const url = `https://qiita.com/api/v2/tags/${tag}/items?page=${page}&per_page=${perPage}`;
     setIsLoading(true);
 
@@ -103,7 +103,7 @@ export function Qiita() {
     return tags;
   }
 
-  const renderImageList = (list: string) => {
+  const renderImageList = (list) => {
     const posts = list.map((item, index) => {
       return (
         <li className="item" key={index}>

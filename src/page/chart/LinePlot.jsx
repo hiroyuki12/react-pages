@@ -16,7 +16,7 @@ const data ={
 }
 */
             //<Line data={data} />
-export const LinePlot: React.FC = () => {
+export const LinePlot = () => {
     return (
         <div>
         </div>

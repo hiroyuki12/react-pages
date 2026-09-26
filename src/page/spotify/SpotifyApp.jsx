@@ -21,7 +21,7 @@ function SpotifyApp() {
     }
   }, [])
 
-  const handleClick = (target: string) => {
+  const handleClick = (target) => {
     const url = `https://api.spotify.com/v1/playlists/37i9dQZF1DX9vYRBO9gjDe/tracks`;
     axios
       .get(url, {

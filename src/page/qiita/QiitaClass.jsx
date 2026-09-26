@@ -19,7 +19,7 @@ class QiitaClass extends React.Component {
   }
 
   componentDidMount() {
-    let queue: NodeJS.Timeout;
+    let queue;
     window.addEventListener("scroll", () => {
       clearTimeout(queue);
       queue = setTimeout(() => {

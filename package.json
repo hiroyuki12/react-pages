@@ -6,34 +6,27 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.21.1",
+    "axios": "^1.20.0",
     "bootstrap": "^5.0.2",
     "dayjs": "^1.11.4",
-    "firebase": "^9.6.6",
+    "firebase": "^12.19.0",
     "moment": "^2.29.1",
     "react": "^18.2.0",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
     "styled-components": "^5.3.1",
     "web-vitals": "^1.1.2",
     "yarn": "^1.22.11"
   },
   "homepage": "http://hiroyuki12.github.io/react-pages",
   "scripts": {
-    "start": "react-scripts start",
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "deploy": "gh-pages -d build",
+    "preview": "vite preview"
   },
   "browserslist": {
     "production": [
@@ -48,6 +41,10 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "@vitejs/plugin-react": "^6.1.1",
+    "gh-pages": "^6.3.0",
+    "jsdom": "^30.1.1",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
   }
 }

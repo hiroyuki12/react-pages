@@ -13,7 +13,7 @@ function Mstdn() {
   const [isLoading, setIsLoading] = useState(false)
   const [maxId, setMaxId] = useState('999999999999999999')
 
-  // ˆê”Ô‰º‚É“ž’B‚µ‚½‚çpage‚ðXV -> handleClick‚ªŽÀs‚³‚ê‚é
+  // ä¸€ç•ªä¸‹ã«åˆ°é”ã—ãŸã‚‰pageã‚’æ›´æ–° -> handleClickãŒå®Ÿè¡Œã•ã‚Œã‚‹
   const handleScroll = lodash.throttle(() => {
     if (
       window.innerHeight + document.documentElement.scrollTop !==
@@ -22,7 +22,7 @@ function Mstdn() {
       return;
     }
 
-    // ˆê”Ô‰º‚É“ž’B‚µ‚½Žž‚Ìˆ—
+    // ä¸€ç•ªä¸‹ã«åˆ°é”ã—ãŸæ™‚ã®å‡¦ç†
     //if(message !== "loading...") {
       setPage((prevCount) => prevCount + 1);
       console.log('page count + 1');
@@ -38,7 +38,7 @@ function Mstdn() {
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // page‚ª•Ï‰»‚µ‚½Žž‚ÉŽÀs
+  // pageãŒå¤‰åŒ–ã—ãŸæ™‚ã«å®Ÿè¡Œ
   useEffect(() => {
     //document.title = `page = ${page}, message = ${message}`;
     handleClick();
@@ -46,7 +46,7 @@ function Mstdn() {
     // eslint-disable-next-line
   }, [page]); // Only re-run the effect if count changes
 
-  const handleClick = (target: string) => {
+  const handleClick = (target) => {
     // const limit = 40;
     const url = `https://mstdn.guru/api/v1/accounts/1/statuses?max_id=` + maxId;
     setIsLoading(true);
@@ -70,7 +70,7 @@ function Mstdn() {
        })
   }
 
-  const renderImageList = (list: string) => {
+  const renderImageList = (list) => {
     const posts = list.map((item, index) => {
       const title = item.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'')
       const reblog = item.reblog

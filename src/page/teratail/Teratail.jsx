@@ -12,7 +12,7 @@ function Teratail() {
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
 
-  // ˆê”Ô‰º‚É“’B‚µ‚½‚ç handleClick‚Åƒy[ƒW‚ğXV
+  // ä¸€ç•ªä¸‹ã«åˆ°é”ã—ãŸã‚‰ handleClickã§ãƒšãƒ¼ã‚¸ã‚’æ›´æ–°
   const handleScroll = lodash.throttle(() => {
     if (
       window.innerHeight + document.documentElement.scrollTop !==
@@ -21,7 +21,7 @@ function Teratail() {
       return;
     }
 
-    // ˆê”Ô‰º‚É“’B‚µ‚½‚Ìˆ—
+    // ä¸€ç•ªä¸‹ã«åˆ°é”ã—ãŸæ™‚ã®å‡¦ç†
     //if(message !== "loading...") {
       setPage((prevCount) => prevCount + 1);  //NG
       console.log('page count + 1');
@@ -37,7 +37,7 @@ function Teratail() {
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // page‚ª•Ï‰»‚µ‚½‚ÉÀs
+  // pageãŒå¤‰åŒ–ã—ãŸæ™‚ã«å®Ÿè¡Œ
   useEffect(() => {
     //document.title = `page = ${page}, message = ${message}`;
     handleClick();
@@ -45,7 +45,7 @@ function Teratail() {
     // eslint-disable-next-line
   }, [page]); // Only re-run the effect if count changes
 
-  const handleClick = (target: string) => {
+  const handleClick = (target) => {
     const limit = 40;
     const url = `https://teratail.com/api/v1/tags/react.js/questions?page=${page}&limit=${limit}`;
     setIsLoading(true);
@@ -68,7 +68,7 @@ function Teratail() {
        })
   }
 
-  const renderImageList = (list: string) => {
+  const renderImageList = (list) => {
     const posts = list.map((item, index) => {
       const user = item.user
       if(user == null) {

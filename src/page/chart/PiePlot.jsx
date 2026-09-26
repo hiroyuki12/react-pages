@@ -15,7 +15,7 @@ const data = {
 */
             //<Pie data={data} />
             //<Doughnut data={data} />
-export const PiePlot: React.FC = () => {
+export const PiePlot = () => {
     return (
         <div>
         </div>

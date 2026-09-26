@@ -16,7 +16,7 @@ function Zenn() {
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleClick = (target: string) => {
+  const handleClick = (target) => {
     const url = `https://zenn-api.netlify.app/.netlify/functions/trendTech`;
     setIsLoading(true);
 
@@ -38,7 +38,7 @@ function Zenn() {
        })
   }
 
-  const renderImageList = (list: string) => {
+  const renderImageList = (list) => {
     const posts = list.map((item, index) => {
       const url = 'https://zenn.dev/' + item.user.username + '/articles/' + item.slug;
       return (
