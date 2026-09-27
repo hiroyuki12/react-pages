@@ -25,14 +25,20 @@
 
 .card-container{
   display: flex;
-  height: 38px;
+  align-items: flex-start;
+  min-height: 50px;
+  margin-bottom: 6px;
+}
+
+.card-container img{
+  flex-shrink: 0;
 }
 
 .card-text a{
   color: white;
   font-size: 14px;
   line-height: 1.2em;
-  height: 32px;
+  max-height: 2.4em;
   margin: 4px;
 
   overflow: hidden;
@@ -43,6 +49,7 @@
 
 .card-text2{
   font-size: 11px;
+  line-height: 14px;
   margin: 4px;
   height: 14px;
 

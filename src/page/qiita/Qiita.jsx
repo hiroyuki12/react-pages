@@ -129,6 +129,8 @@ export function Qiita() {
         <font color="red"><b>{error}</b></font>
         <Search search={handleClick} />
         <br />
+        <button onClick={() => {tagButtonClick("ClaudeCode")}}>ClaudeCode</button>
+        <button onClick={() => {tagButtonClick("Codex")}}>Codex</button>
         <button onClick={() => {tagButtonClick("React")}}>React</button>
         <button onClick={() => {tagButtonClick("Next.js")}}>Next.js</button>
         <button onClick={() => {tagButtonClick("Vue.js")}}>Vue.js</button>
